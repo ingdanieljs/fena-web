@@ -24,3 +24,15 @@ export const modalidades = [
   { image: "/assets/images/img_bank/img_3.webp", icon: "fas fa-music", title: "Natación Artística", text: "Convocatorias, eventos, resultados y documentos técnicos.", to: "/modalidades" },
   { image: "/assets/images/img_bank/img_9.webp", icon: "fas fa-medal", title: "Masters", text: "Competencias, reglas y récords máster en 25 m, 50 m y relevos.", to: "/modalidades" },
 ];
+
+// Logos en blanco, en public/assets/images/patners. La altura de cada uno
+// compensa su forma (los anchos se ven más chicos) para que todos pesen
+// parecido en la fila; width y height van a la mitad del archivo (2x).
+export const partners = [
+  { name: "Comité Olímpico Ecuatoriano", image: "/assets/images/patners/comite-olimpico-ecuatoriano.webp", width: 79, height: 80 },
+  { name: "Confederación Sudamericana de Deportes Acuáticos", image: "/assets/images/patners/consanat.webp", width: 62, height: 80 },
+  { name: "Ministerio de Educación, Deporte y Cultura", image: "/assets/images/patners/ministerio-educacion-deporte-cultura.webp", width: 117, height: 55 },
+  { name: "Organización Deportiva Suramericana (ODESUR)", image: "/assets/images/patners/odesur.webp", width: 72, height: 80 },
+  { name: "Panam Aquatics", image: "/assets/images/patners/panam-aquatics.webp", width: 143, height: 44 },
+  { name: "World Aquatics", image: "/assets/images/patners/world-aquatics.webp", width: 161, height: 40 },
+];

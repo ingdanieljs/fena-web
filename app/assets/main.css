@@ -164,6 +164,57 @@
   font-size: 12px;
 }
 
+/* Franja superior y menú centrados con un máximo de 1440px en pantallas
+   grandes; el fondo pasa al contenedor exterior para que siga ocupando todo
+   el ancho. Se mantiene el padding de 20px que usa la plantilla desde 1400px. */
+.main-menu__top {
+  background-color: var(--eduvers-white);
+}
+
+.main-menu-two__top {
+  background-color: var(--eduvers-black);
+}
+
+/* Selectores dobles para ganarle a responsive.css. */
+@media (min-width: 1400px) {
+  .main-menu__top .main-menu__top-inner,
+  .main-menu-two__top .main-menu-two__top-inner,
+  .main-menu .main-menu__wrapper-inner,
+  .main-menu .main-menu-two__wrapper-inner {
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+/* Enlaces del menú a 18px (la plantilla usa 16px). */
+.main-menu .main-menu__list > li > a,
+.stricky-header .main-menu__list > li > a {
+  font-size: 18px;
+  line-height: 18px;
+}
+
+/* Menú azul de las páginas interiores: el activo y el hover van en amarillo
+   (texto, subrayado y flecha del dropdown); el rojo queda para el menú
+   blanco de la home. Los submenús son blancos y mantienen el rojo. */
+.main-menu:not(.main-menu-two) .main-menu__list > li.current > a,
+.main-menu:not(.main-menu-two) .main-menu__list > li:hover > a,
+.main-menu:not(.main-menu-two) .main-menu__list > li.current > a::after,
+.main-menu:not(.main-menu-two) .main-menu__list > li:hover > a::after {
+  color: var(--fena-accent);
+}
+
+.main-menu:not(.main-menu-two) .main-menu__list > li > a::before {
+  background-color: var(--fena-accent);
+}
+
+.main-menu:not(.main-menu-two) .main-menu__list > li > a:focus-visible {
+  outline: 2px solid var(--fena-accent);
+  outline-offset: 4px;
+}
+
 /* Menos de 1200px: el menú se colapsa en un botón. Se oculta el botón del panel
    de información para no tener dos íconos de hamburguesa, y el botón del menú
    pasa al extremo derecho. */
@@ -1129,5 +1180,438 @@
   .home-modalidades__card:hover .home-modalidades__img,
   .home-modalidades__card:focus-visible .home-modalidades__img {
     transform: none;
+  }
+}
+
+/* Variante vertical (prueba): con la clase home-modalidades--vertical en la
+   sección, la foto ocupa toda la tarjeta con degradado azul marino desde
+   abajo, como los accesos rápidos. Las 6 van en una fila en escritorio, así
+   la sección queda más baja. Quitando la clase vuelve la versión mitad foto,
+   mitad azul. */
+.home-modalidades--vertical .home-modalidades__list {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.home-modalidades--vertical .home-modalidades__card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 5;
+}
+
+.home-modalidades--vertical .home-modalidades__media {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+}
+
+.home-modalidades--vertical .home-modalidades__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(var(--eduvers-black-rgb), 0) 25%,
+      rgba(var(--eduvers-black-rgb), .6) 52%,
+      rgba(var(--eduvers-black-rgb), .95) 100%);
+}
+
+/* El cuerpo cubre toda la tarjeta (el icono se ubica en su esquina) y
+   empuja el texto hacia abajo. */
+.home-modalidades--vertical .home-modalidades__body {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 16px 18px;
+}
+
+.home-modalidades--vertical .home-modalidades__body::before {
+  position: static;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.home-modalidades--vertical .home-modalidades__icon {
+  top: 14px;
+  right: auto;
+  left: 14px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  box-shadow: none;
+  font-size: 19px;
+  transform: none;
+}
+
+.home-modalidades--vertical .home-modalidades__title {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.home-modalidades--vertical .home-modalidades__text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(var(--eduvers-white-rgb), .82);
+}
+
+@media (max-width: 1199px) {
+  .home-modalidades--vertical .home-modalidades__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .home-modalidades--vertical .home-modalidades__card {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-modalidades--vertical .home-modalidades__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .home-modalidades--vertical .home-modalidades__card {
+    aspect-ratio: 3 / 4;
+  }
+
+  .home-modalidades--vertical .home-modalidades__body {
+    padding: 0 12px 14px;
+  }
+
+  .home-modalidades--vertical .home-modalidades__icon {
+    top: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .home-modalidades--vertical .home-modalidades__title {
+    margin: 0 0 4px;
+    font-size: 16px;
+  }
+
+  .home-modalidades--vertical .home-modalidades__text {
+    font-size: 13px;
+  }
+}
+
+/* Testimonios ("Construyendo una comunidad"): fondo #F8F4F2 para separarla
+   del blanco de modalidades. Tarjetas blancas con esquinas de 8px y la línea
+   roja que crece en el hover, como el resto de la home; sin el relleno rojo
+   ni las estrellas de la plantilla. Comillas de fondo en azul translúcido;
+   flechas en azul marino con amarillo. En lugar de la foto va la inicial
+   del nombre. */
+.testimonial-two {
+  padding: 90px 0 100px;
+  background-color: var(--eduvers-primary);
+}
+
+.testimonial-two .section-title {
+  margin-bottom: 40px;
+}
+
+.testimonial-two__single {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .1);
+  transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.testimonial-two__single::before {
+  top: 0;
+  right: auto;
+  bottom: auto;
+  width: 36px;
+  height: 3px;
+  border-radius: 0;
+  background-color: var(--eduvers-base);
+  opacity: 1;
+  transform: none;
+  transition: width 400ms ease;
+}
+
+.testimonial-two__single:hover {
+  box-shadow: 0 18px 40px rgba(var(--eduvers-black-rgb), .16);
+  transform: translateY(-4px);
+}
+
+.testimonial-two__single:hover::before {
+  width: 100%;
+  opacity: 1;
+  transform: none;
+  transition: width 400ms ease;
+}
+
+.testimonial-two__single-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 36px 32px 30px;
+}
+
+/* Comillas grandes de fondo, saliendo de la esquina inferior derecha. */
+.testimonial-two__quote {
+  right: -8px;
+  bottom: -22px;
+  z-index: -1;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonial-two__quote span {
+  font-size: 130px;
+  color: rgba(var(--eduvers-black-rgb), .06);
+  transition: color 400ms ease;
+}
+
+.testimonial-two__single:hover .testimonial-two__quote span {
+  color: rgba(var(--eduvers-black-rgb), .1);
+}
+
+.testimonial-two__text {
+  flex: 1;
+  margin: 0 0 26px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--eduvers-black);
+}
+
+.testimonial-two__client-info {
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(var(--eduvers-black-rgb), .1);
+}
+
+.testimonial-two__client-initial {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--eduvers-black);
+  font-family: var(--eduvers-font-two);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--fena-accent);
+}
+
+.testimonial-two__client-content {
+  margin-left: 0;
+}
+
+.testimonial-two__client-content h3 {
+  margin-bottom: 4px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.testimonial-two__client-content h3 a:hover {
+  color: var(--eduvers-base);
+}
+
+.testimonial-two__client-content p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.3;
+  color: var(--eduvers-gray);
+}
+
+/* El hover ya no pinta la tarjeta de rojo: los textos no cambian de color. */
+.testimonial-two__single:hover .testimonial-two__text,
+.testimonial-two__single:hover .testimonial-two__client-content h3 a {
+  color: var(--eduvers-black);
+}
+
+.testimonial-two__single:hover .testimonial-two__client-content p {
+  color: var(--eduvers-gray);
+}
+
+/* Altura pareja: owl usa flex en el escenario, cada item se estira. */
+.testimonial-two__carousel.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.testimonial-two__carousel.owl-carousel .owl-item,
+.testimonial-two__carousel .item {
+  display: flex;
+}
+
+.testimonial-two__carousel .item {
+  flex: 1;
+  padding: 6px 0 20px;
+}
+
+.testimonial-two__carousel.owl-theme .owl-nav {
+  top: -96px;
+}
+
+.testimonial-two__carousel.owl-theme .owl-nav .owl-prev,
+.testimonial-two__carousel.owl-theme .owl-nav .owl-next {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  box-shadow: none;
+  font-size: 14px;
+  color: var(--fena-accent);
+}
+
+.testimonial-two__carousel.owl-theme .owl-nav .owl-prev:hover,
+.testimonial-two__carousel.owl-theme .owl-nav .owl-next:hover {
+  background-color: var(--eduvers-base);
+  color: var(--eduvers-white);
+}
+
+.testimonial-two__carousel.owl-theme .owl-nav button:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .testimonial-two {
+    padding: 60px 0 70px;
+  }
+
+  .testimonial-two .section-title {
+    margin-bottom: 28px;
+  }
+
+  .testimonial-two__single-inner {
+    padding: 28px 22px 24px;
+  }
+
+  .testimonial-two__text {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-two__single,
+  .testimonial-two__single::before,
+  .testimonial-two__single:hover::before,
+  .testimonial-two__quote span {
+    transition: none;
+  }
+
+  .testimonial-two__single:hover {
+    transform: none;
+  }
+}
+
+/* Federaciones y organismos amigos (HomeFederations): franja azul marino con
+   los logos en blanco en una cinta continua de una sola línea. Pausa con el
+   hover; sin movimiento con prefers-reduced-motion (pasa a scroll). */
+.home-partners {
+  padding: 80px 0 90px;
+  overflow: hidden;
+  background-color: var(--eduvers-black);
+}
+
+.home-partners .section-title {
+  margin-bottom: 44px;
+}
+
+.home-partners .section-title__title {
+  color: var(--eduvers-white);
+}
+
+.home-partners .section-title__title span {
+  color: var(--fena-accent);
+}
+
+/* Bordes difuminados para que los logos entren y salgan suave. */
+.home-partners__marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.home-partners__track {
+  display: flex;
+  width: max-content;
+  animation: home-partners-scroll 32s linear infinite;
+}
+
+.home-partners__marquee:hover .home-partners__track {
+  animation-play-state: paused;
+}
+
+.home-partners__list {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 88px;
+  margin: 0;
+  padding: 0 44px;
+  list-style: none;
+}
+
+.home-partners__item {
+  display: flex;
+  flex: none;
+  align-items: center;
+  height: 80px;
+}
+
+/* Tamaño exacto por los atributos width/height de cada logo. */
+.home-partners__logo {
+  display: block;
+  max-width: none;
+  opacity: .85;
+  transition: opacity 300ms ease;
+}
+
+.home-partners__item:hover .home-partners__logo {
+  opacity: 1;
+}
+
+@keyframes home-partners-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .home-partners {
+    padding: 60px 0 64px;
+  }
+
+  .home-partners .section-title {
+    margin-bottom: 32px;
+  }
+
+  .home-partners__list {
+    gap: 56px;
+    padding: 0 28px;
+  }
+
+  .home-partners__item {
+    height: 64px;
+  }
+
+  .home-partners__logo {
+    zoom: .8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-partners__marquee {
+    overflow-x: auto;
+  }
+
+  .home-partners__track {
+    animation: none;
+  }
+
+  .home-partners__list[aria-hidden] {
+    display: none;
   }
 }

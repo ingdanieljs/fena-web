@@ -1,141 +1,28 @@
+<script setup>
+import { partners } from "~/data/home.js";
+</script>
+
 <template>
-  <section class="brand-one">
-      <div class="container">
-          <div class="section-title text-center sec-title-animation animation-style1">
-              <h2 class="section-title__title title-animation">Federaciones y organismos<br> amigos del
-                  <span>deporte</span>.
-              </h2>
-          </div>
-          <div class="brand-one__inner">
-              <ul>
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-1.png" alt="">
-                              </div>
-                          </div>
-                          <div class="brand-one__shape-1"></div>
-                      </a>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-2.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-1"></div>
-                      <div class="brand-one__shape-2"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-3.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-1"></div>
-                      <div class="brand-one__shape-2"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-4.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-1"></div>
-                      <div class="brand-one__shape-2"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-5.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-2"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-6.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-3"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-7.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-3"></div>
-                      <div class="brand-one__shape-4"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-8.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-3"></div>
-                      <div class="brand-one__shape-4"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-9.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-3"></div>
-                      <div class="brand-one__shape-4"></div>
-                  </li>
-                  <!--Brand One Single End-->
-                  <!--Brand One Single Start-->
-                  <li>
-                      <a href="#">
-                          <div class="brand-one__single">
-                              <div class="brand-one__img">
-                                  <img src="/assets/images/brand/brand-1-10.png" alt="">
-                              </div>
-                          </div>
-                      </a>
-                      <div class="brand-one__shape-4"></div>
-                  </li>
-                  <!--Brand One Single End-->
-              </ul>
-          </div>
+  <section class="home-partners" aria-labelledby="home-partners-title">
+    <div class="container">
+      <div class="section-title text-center sec-title-animation animation-style1">
+        <h2 id="home-partners-title" class="section-title__title title-animation">Federaciones y organismos<br> amigos del
+          <span>deporte</span>.
+        </h2>
       </div>
+      <!-- Cinta continua: la lista va dos veces y la animación corre la mitad
+           del ancho; la copia queda oculta para lectores de pantalla. -->
+      <div class="home-partners__marquee">
+        <div class="home-partners__track">
+          <ul v-for="copy in 2" :key="copy" class="home-partners__list" :aria-hidden="copy === 2 ? 'true' : undefined">
+            <li v-for="partner in partners" :key="partner.name" class="home-partners__item">
+              <img
+                :src="partner.image" :alt="copy === 1 ? partner.name : ''" :width="partner.width"
+                :height="partner.height" loading="lazy" class="home-partners__logo">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </template>

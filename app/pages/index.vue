@@ -10,9 +10,10 @@ useHead({ title: "" });
     <HomeEvents />
     <HomeAbout />
     <HomeModalidades />
-    <HomeGallery />
-    <HomeAffiliation />
-    <HomeResearch />
+    <!-- Ocultas por ahora; los componentes siguen en app/components/home. -->
+    <!-- <HomeGallery /> -->
+    <!-- <HomeAffiliation /> -->
+    <!-- <HomeResearch /> -->
     <HomeTestimonials />
     <HomeFederations />
     <HomeNews />

@@ -551,8 +551,8 @@
         autoplay: true,
         autoplayTimeout: 7000,
         navText: [
-          '<span class="icon-next"></span>',
-          '<span class="icon-next"></span>',
+          '<span class="far fa-chevron-right" aria-hidden="true"></span><span class="visually-hidden">Testimonio anterior</span>',
+          '<span class="far fa-chevron-right" aria-hidden="true"></span><span class="visually-hidden">Testimonio siguiente</span>',
         ],
         responsive: {
           0: {
