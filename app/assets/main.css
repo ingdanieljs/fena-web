@@ -1,0 +1,165 @@
+/* Estilos propios del proyecto Nuxt. Los de la plantilla viven en public/assets/css. */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dropdown cerrado tras elegir una opción (ver HeaderNav.vue). */
+.main-menu__list > li.is-closed > ul {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* El submenú tiene visibility: visible propio; sin esto queda flotando
+   mientras el header fijo se oculta. */
+.stricky-header:not(.stricky-fixed) .main-menu__list ul {
+  visibility: hidden !important;
+}
+
+/* Al cambiar de página el header fijo se oculta sin animación (template.client.js). */
+.stricky-header.no-transition {
+  transition: none !important;
+}
+
+/* Header de las páginas interiores con las mismas medidas que el de la home
+   (.main-menu-two__*), para que no salte al cambiar de vista. */
+.main-menu__logo {
+  padding: 0;
+}
+
+.main-menu__logo img {
+  height: 60px;
+  width: auto;
+}
+
+.footer-widget__about-logo img {
+  height: 60px;
+  width: auto;
+}
+
+.xs-sidebar-group .content-inner .logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Menú de las páginas interiores con fondo azul sólido, igual que el header fijo
+   (.stricky-header.main-menu), en lugar de transparente sobre el banner. */
+.main-header > .main-menu {
+  background-color: var(--eduvers-black);
+}
+
+/* Sobre el menú azul el botón va en rojo (hover blanco con texto rojo, de style.css). */
+.main-menu__btn-box .thm-btn {
+  background-color: var(--eduvers-base);
+}
+
+/* Franja superior de las páginas interiores: blanca con texto azul,
+   el inverso de la home (franja azul y menú blanco). Iconos en rojo:
+   el amarillo no se lee sobre blanco. */
+.main-menu__top-inner {
+  background-color: var(--eduvers-white);
+}
+
+.main-menu__contact-list li:before {
+  background-color: rgba(var(--eduvers-black-rgb), .15);
+}
+
+.main-menu__contact-list li .icon i {
+  color: var(--eduvers-base);
+}
+
+.main-menu__contact-list li .text p,
+.main-menu__contact-list li .text p a,
+.main-menu__social-title {
+  color: var(--eduvers-black);
+}
+
+.main-menu__contact-list li .text p a:hover {
+  color: var(--eduvers-base);
+}
+
+.main-menu__social a {
+  color: var(--eduvers-black);
+  border-color: rgba(var(--eduvers-black-rgb), .20);
+}
+
+.main-menu__social a:hover {
+  color: var(--eduvers-white);
+  border-color: var(--eduvers-black);
+}
+
+/* Franja superior compacta (home e interiores). */
+.main-menu-two__contact-list li + li,
+.main-menu__contact-list li + li {
+  margin-left: 30px;
+}
+
+.main-menu-two__contact-list li:before,
+.main-menu__contact-list li:before {
+  left: -15px;
+}
+
+.main-menu-two__contact-list li .icon i,
+.main-menu__contact-list li .icon i {
+  font-size: 14px;
+}
+
+.main-menu-two__contact-list li .text,
+.main-menu__contact-list li .text {
+  margin-left: 8px;
+}
+
+.main-menu-two__contact-list li .text p,
+.main-menu__contact-list li .text p,
+.main-menu-two__social-title,
+.main-menu__social-title {
+  font-size: 13px;
+}
+
+.main-menu-two__social,
+.main-menu__social {
+  margin-left: 12px;
+}
+
+.main-menu-two__social a,
+.main-menu__social a {
+  height: 26px;
+  width: 26px;
+  font-size: 12px;
+}
+
+/* Menos de 1200px: el menú se colapsa en un botón. Se oculta el botón del panel
+   de información para no tener dos íconos de hamburguesa, y el botón del menú
+   pasa al extremo derecho. */
+@media (max-width: 1199px) {
+  .main-menu__nav-sidebar-icon,
+  .main-menu-two__nav-sidebar-icon {
+    display: none;
+  }
+
+  .main-menu__main-menu-box,
+  .main-menu-two__main-menu-box {
+    order: 3;
+    margin-left: 20px;
+  }
+
+  .main-menu .mobile-nav__toggler {
+    font-size: 24px;
+  }
+
+  .main-menu__right,
+  .main-menu-two__right {
+    margin-left: auto;
+  }
+
+  .main-menu__wrapper-inner,
+  .main-menu-two__wrapper-inner {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

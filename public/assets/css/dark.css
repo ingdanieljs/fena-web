@@ -1,0 +1,132 @@
+body,
+body.boxed-wrapper .page-wrapper,
+.process-one__icon-inner,
+.services-two__icon:before,
+.services-two__icon:after,
+.services-one__icon:before,
+.services-one__icon:after,
+.services-one__content {
+    background-color: var(--cleanon-black);
+}
+
+
+.blog-one__tags-two span::before,
+.blog-one__tags span::before,
+.blog-one__single-two,
+.blog-one__single,
+.video-one__inner-shape-1,
+.video-one__bg-color,
+.team-one__experience,
+.process-one,
+.counter-one,
+.who-we-serve__bg-color,
+.about-one,
+.services-one__single {
+    background-color: #0e4239;
+}
+
+
+
+
+
+.services-one__count:after {
+    background-color: var(--cleanon-white);
+}
+
+
+
+
+.blog-one__user-two-title,
+.blog-one__meta-two li a span,
+.blog-one__title-two a,
+.blog-one__user-title,
+.blog-one__meta li a span,
+.blog-one__title a,
+.video-one__text-2,
+.video-one__title,
+.team-one__experience-count h3,
+.team-one__experience-count span,
+.team-one__name a,
+.process-one__title,
+.why-choose-one__client-content h5 a,
+.why-choose-one__points li h5,
+.counter-one__count h3,
+.counter-one__count span,
+.services-two__title a,
+.services-one__count::before,
+.services-one__title a,
+.section-title__title {
+    color: var(--cleanon-white);
+}
+
+
+
+
+
+
+.blog-one__tags-two span,
+.blog-one__meta-two li a,
+.blog-one__text-two,
+.blog-one__tags span,
+.blog-one__text,
+.blog-one__meta li a,
+.team-one__experience-count-text,
+.team-one__sub-title,
+.process-one__text,
+.why-choose-one__client-content p,
+.why-choose-one__text,
+.counter-one__count-text,
+.services-two__icon span,
+.services-two__text,
+.services-one__icon span,
+.services-one__text {
+    color: rgba(var(--cleanon-white-rgb), .70);
+}
+
+
+
+
+
+
+
+.services-two__single {
+    border: 2px solid rgba(var(--cleanon-white-rgb), .10);
+}
+
+
+.counter-one__shape-1 {
+    filter: invert(1);
+}
+
+.why-choose-one__img-box {
+    border: 5px solid var(--cleanon-base);
+}
+
+.about-one__big-text {
+    opacity: .4;
+}
+
+.video-one__bg-shape {
+    opacity: 0.01;
+}
+
+.testimonial-one__img-shape-2 {
+    border: 5px solid #0e4239;
+    border-top: 0;
+}
+
+.testimonial-one__img-shape-1 {
+    border: 5px solid #0e4239;
+}
+
+.blog-one__user-two:before,
+.blog-one__user:before {
+    border: 1px solid rgba(var(--cleanon-white-rgb), .20);
+}
+
+.blog-one__meta-two li::before,
+.blog-one__meta li::before {
+    border: 1px solid var(--cleanon-white);
+}
+
+/* End */
