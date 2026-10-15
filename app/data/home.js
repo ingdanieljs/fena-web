@@ -1,10 +1,10 @@
 // Contenido de ejemplo de la home. Cuando exista backend, estos datos vendrán de la API.
 
 export const features = [
-  { icon: "icon-open-book", title: "Inscripciones y récords", to: "/institucion" },
-  { icon: "icon-plant", title: "Convocatorias abiertas", to: "/institucion" },
-  { icon: "icon-agenda", title: "Documentos técnicos", to: "/institucion" },
-  { icon: "icon-online-learning", title: "Capacitación y jueces", to: "/institucion" },
+  { image: "/assets/images/home-features/inscripciones.webp", title: "Inscripciones y récords", to: "/institucion" },
+  { image: "/assets/images/home-features/convocatorias.webp", title: "Convocatorias abiertas", to: "/institucion" },
+  { image: "/assets/images/home-features/documentos.webp", title: "Documentos técnicos", to: "/institucion" },
+  { image: "/assets/images/home-features/capacitacion.webp", title: "Capacitación y jueces", to: "/institucion" },
 ];
 
 export const stats = [

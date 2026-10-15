@@ -163,3 +163,160 @@
     padding-bottom: 12px;
   }
 }
+
+/* Accesos rápidos bajo el banner de la home: tarjetas verticales con foto
+   (fotogramas del video del banner) que se montan sobre su borde inferior.
+   El título va en blanco sobre un degradado azul marino que llega al 92 %
+   de opacidad, así se lee igual sin importar la foto. */
+.home-access {
+  position: relative;
+  z-index: 10;
+  margin-top: -110px;
+}
+
+.home-access__list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 250px));
+  justify-content: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-access__card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .28);
+}
+
+.home-access__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.home-access__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(var(--eduvers-black-rgb), 0) 35%,
+      rgba(var(--eduvers-black-rgb), .55) 62%,
+      rgba(var(--eduvers-black-rgb), .92) 100%);
+}
+
+.home-access__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 20px 18px 18px;
+}
+
+/* Línea roja sobre el título: crece en el hover. */
+.home-access__content::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: 14px;
+  background-color: var(--eduvers-base);
+  transition: width 400ms ease;
+}
+
+.home-access__title {
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--eduvers-white);
+}
+
+.home-access__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(var(--eduvers-white-rgb), .9);
+}
+
+.home-access__more .fas {
+  font-size: 12px;
+  color: var(--fena-accent);
+  transition: transform 300ms ease;
+}
+
+.home-access__card:hover .home-access__img,
+.home-access__card:focus-visible .home-access__img {
+  transform: scale(1.06);
+}
+
+.home-access__card:hover .home-access__content::before,
+.home-access__card:focus-visible .home-access__content::before {
+  width: 100%;
+}
+
+.home-access__card:hover .home-access__more .fas,
+.home-access__card:focus-visible .home-access__more .fas {
+  transform: translateX(4px);
+}
+
+.home-access__card:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 991px) {
+  .home-access__list {
+    grid-template-columns: repeat(2, minmax(0, 250px));
+  }
+}
+
+@media (max-width: 767px) {
+  .home-access {
+    margin-top: -60px;
+  }
+
+  .home-access__list {
+    gap: 12px;
+  }
+
+  .home-access__content {
+    padding: 16px 14px 14px;
+  }
+
+  .home-access__content::before {
+    margin-bottom: 10px;
+  }
+
+  .home-access__title {
+    font-size: 17px;
+  }
+
+  .home-access__more {
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-access__img,
+  .home-access__content::before,
+  .home-access__more .fas {
+    transition: none;
+  }
+
+  .home-access__card:hover .home-access__img,
+  .home-access__card:focus-visible .home-access__img {
+    transform: none;
+  }
+}

@@ -3,27 +3,19 @@ import { features } from "~/data/home.js";
 </script>
 
 <template>
-  <section class="feature-two">
+  <section class="home-access" aria-label="Accesos rápidos">
     <div class="container">
-      <div class="feature-two__inner">
-        <ul class="feature-two__list">
-          <li v-for="feature in features" :key="feature.title">
-            <div class="feature-two__single">
-              <div class="feature-two__icon">
-                <span :class="feature.icon"></span>
-              </div>
-              <div class="feature-two__content">
-                <h3 class="feature-two__title">
-                  <NuxtLink :to="feature.to">{{ feature.title }}</NuxtLink>
-                </h3>
-                <div class="feature-two__read-more">
-                  <NuxtLink :to="feature.to">Leer más<span class="fas fa-arrow-right"></span></NuxtLink>
-                </div>
-              </div>
+      <ul class="home-access__list">
+        <li v-for="feature in features" :key="feature.title">
+          <NuxtLink :to="feature.to" class="home-access__card">
+            <img :src="feature.image" alt="" width="540" height="720" class="home-access__img">
+            <div class="home-access__content">
+              <h3 class="home-access__title">{{ feature.title }}</h3>
+              <span class="home-access__more" aria-hidden="true">Leer más<span class="fas fa-arrow-right"></span></span>
             </div>
-          </li>
-        </ul>
-      </div>
+          </NuxtLink>
+        </li>
+      </ul>
     </div>
   </section>
 </template>
