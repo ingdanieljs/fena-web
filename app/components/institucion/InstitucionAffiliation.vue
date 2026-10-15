@@ -70,7 +70,7 @@ class="admission-one__bg"
                                       </div>
                                       <div class="admission-one__btn-box">
                                           <button type="submit" class="thm-btn">Enviar solicitud<span
-                                                  class="fas fa-arrow-right"></span></button>
+                                                  class="far fa-chevron-right"></span></button>
                                       </div>
                                   </div>
                               </div>

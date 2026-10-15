@@ -37,7 +37,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -76,7 +76,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -115,7 +115,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -153,7 +153,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -191,7 +191,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -229,7 +229,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -268,7 +268,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -306,7 +306,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -344,7 +344,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -382,7 +382,7 @@
                                       de la federación en sus distintas modalidades.</p>
                                   <div class="blog-two__read-more-box">
                                       <NuxtLink to="/noticias/detalle" class="blog-two__read-more">Leer más <span
-                                              class="fas fa-arrow-right"></span></NuxtLink>
+                                              class="far fa-chevron-right"></span></NuxtLink>
                                   </div>
                               </div>
                           </div>
@@ -479,7 +479,7 @@ class="sidebar__contact-bg"
                           </div>
                           <div class="sidebar__contact-btn">
                               <NuxtLink class="thm-btn" to="/contacto">Contáctanos
-                                  <span class="fas fa-arrow-right"></span>
+                                  <span class="far fa-chevron-right"></span>
                               </NuxtLink>
                           </div>
                       </div>

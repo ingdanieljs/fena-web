@@ -11,7 +11,7 @@ import { features } from "~/data/home.js";
             <img :src="feature.image" alt="" width="540" height="720" class="home-access__img">
             <div class="home-access__content">
               <h3 class="home-access__title">{{ feature.title }}</h3>
-              <span class="home-access__more" aria-hidden="true">Leer más<span class="fas fa-arrow-right"></span></span>
+              <span class="home-access__more" aria-hidden="true">Leer más<span class="far fa-chevron-right"></span></span>
             </div>
           </NuxtLink>
         </li>

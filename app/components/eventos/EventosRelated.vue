@@ -22,7 +22,7 @@
                               </div>
                               <div class="events-two__btn-box">
                                   <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                          class="far fa-chevron-right"></span></NuxtLink>
                               </div>
                               <div class="events-two__date">
                                   <p>14</p>
@@ -50,7 +50,7 @@
                               </div>
                               <div class="events-two__btn-box">
                                   <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                          class="far fa-chevron-right"></span></NuxtLink>
                               </div>
                               <div class="events-two__date">
                                   <p>16</p>
@@ -78,7 +78,7 @@
                               </div>
                               <div class="events-two__btn-box">
                                   <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                          class="far fa-chevron-right"></span></NuxtLink>
                               </div>
                               <div class="events-two__date">
                                   <p>13</p>

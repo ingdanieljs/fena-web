@@ -64,10 +64,11 @@ export default defineNuxtConfig({
         { name: "theme-color", content: "#0B1542" },
       ],
       link: [
-        { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/images/favicons/apple-touch-icon.png" },
-        { rel: "icon", type: "image/png", sizes: "32x32", href: "/assets/images/favicons/favicon-32x32.png" },
-        { rel: "icon", type: "image/png", sizes: "16x16", href: "/assets/images/favicons/favicon-16x16.png" },
-        { rel: "manifest", href: "/assets/images/favicons/site.webmanifest" },
+        { rel: "icon", href: "/favicon/favicon.ico", sizes: "48x48" },
+        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon/favicon-32x32.png" },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon/favicon-16x16.png" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/favicon/apple-touch-icon.png" },
+        { rel: "manifest", href: "/favicon/site.webmanifest" },
         { rel: "preconnect", href: "https://fonts.googleapis.com" },
         { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;500;600;700&display=swap" },
@@ -78,4 +79,8 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/main.css"],
+  // Los favicons viven en public/favicon; navegadores y buscadores igual piden /favicon.ico.
+  routeRules: {
+    "/favicon.ico": { redirect: { to: "/favicon/favicon.ico", statusCode: 301 } },
+  },
 });

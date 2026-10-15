@@ -94,7 +94,7 @@
                       </div>
                       <div class="about-two__btn-box">
                           <NuxtLink to="/institucion" class="thm-btn">Ver modalidades<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>

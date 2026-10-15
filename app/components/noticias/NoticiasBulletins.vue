@@ -218,7 +218,7 @@ class="sidebar__contact-bg"
                           </div>
                           <div class="sidebar__contact-btn">
                               <NuxtLink class="thm-btn" to="/contacto">Contáctanos
-                                  <span class="fas fa-arrow-right"></span>
+                                  <span class="far fa-chevron-right"></span>
                               </NuxtLink>
                           </div>
                       </div>

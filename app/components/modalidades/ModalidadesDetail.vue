@@ -928,7 +928,7 @@ name="message"
 type="submit"
                                                                   class="thm-btn comment-form__btn">Enviar
                                                                   ahora <span
-                                                                      class="fas fa-arrow-right"></span></button>
+                                                                      class="far fa-chevron-right"></span></button>
                                                           </div>
                                                       </div>
                                                   </div>
@@ -962,7 +962,7 @@ class="course-details__video-link-bg"
                               <h3 class="course-details__doller">Gratuito</h3>
                               <div class="course-details__doller-btn-box">
                                   <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                      Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                      Ver convocatoria<span class="far fa-chevron-right"></span>
                                   </NuxtLink>
                               </div>
                           </div>

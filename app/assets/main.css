@@ -58,6 +58,37 @@
   background-color: var(--eduvers-base);
 }
 
+/* Botones: sobre el azul marino de .thm-btn el icono (chevron, lupa, avión)
+   va en amarillo de marca (14:1). En el hover el botón pasa a rojo y el
+   icono toma el color del texto, porque el amarillo va solo sobre azul.
+   Los botones que ya son rojos (banner, header interior, panel lateral,
+   chat) mantienen el icono del color del texto. */
+.thm-btn :is(.fas, .far) {
+  color: var(--fena-accent);
+  transition: color 300ms ease, transform 300ms ease;
+}
+
+.thm-btn:hover :is(.fas, .far),
+.thm-btn:focus-visible :is(.fas, .far),
+.main-slider-two__btn-box .thm-btn :is(.fas, .far),
+.main-menu__btn-box .thm-btn :is(.fas, .far),
+.xs-sidebar-group .thm-btn :is(.fas, .far),
+.chat-popup .thm-btn :is(.fas, .far) {
+  color: inherit;
+}
+
+.thm-btn:hover .fa-chevron-right,
+.thm-btn:focus-visible .fa-chevron-right {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thm-btn:hover .fa-chevron-right,
+  .thm-btn:focus-visible .fa-chevron-right {
+    transform: none;
+  }
+}
+
 /* Franja superior de las páginas interiores: blanca con texto azul,
    el inverso de la home (franja azul y menú blanco). Iconos en rojo:
    el amarillo no se lee sobre blanco. */
@@ -168,10 +199,21 @@
    (fotogramas del video del banner) que se montan sobre su borde inferior.
    El título va en blanco sobre un degradado azul marino que llega al 92 %
    de opacidad, así se lee igual sin importar la foto. */
+/* El fondo de la franja de cifras (HomeCounter, justo debajo) arranca en el
+   borde del banner, por detrás de las tarjetas: la parte que se monta sobre
+   el banner queda transparente. */
 .home-access {
+  --home-access-overlap: 110px;
   position: relative;
   z-index: 10;
-  margin-top: -110px;
+  margin-top: calc(-1 * var(--home-access-overlap));
+  background: linear-gradient(transparent var(--home-access-overlap), var(--eduvers-primary) 0);
+}
+
+/* Cifras: sin título, como continuación de la franja de los accesos y
+   divisor antes de los eventos. */
+.home-access + .counter-one {
+  padding: 70px 0 40px;
 }
 
 .home-access__list {
@@ -250,7 +292,7 @@
   color: rgba(var(--eduvers-white-rgb), .9);
 }
 
-.home-access__more .fas {
+.home-access__more .far {
   font-size: 12px;
   color: var(--fena-accent);
   transition: transform 300ms ease;
@@ -266,8 +308,8 @@
   width: 100%;
 }
 
-.home-access__card:hover .home-access__more .fas,
-.home-access__card:focus-visible .home-access__more .fas {
+.home-access__card:hover .home-access__more .far,
+.home-access__card:focus-visible .home-access__more .far {
   transform: translateX(4px);
 }
 
@@ -284,7 +326,11 @@
 
 @media (max-width: 767px) {
   .home-access {
-    margin-top: -60px;
+    --home-access-overlap: 60px;
+  }
+
+  .home-access + .counter-one {
+    padding: 50px 0 20px;
   }
 
   .home-access__list {
@@ -311,12 +357,777 @@
 @media (prefers-reduced-motion: reduce) {
   .home-access__img,
   .home-access__content::before,
-  .home-access__more .fas {
+  .home-access__more .far {
     transition: none;
   }
 
   .home-access__card:hover .home-access__img,
   .home-access__card:focus-visible .home-access__img {
+    transform: none;
+  }
+}
+
+/* Cifras: misma grilla que los accesos (4 × 250px, 24px de separación) para
+   que cada cifra quede debajo de su tarjeta. Iconos en amarillo sobre azul
+   marino (14:1). */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 250px));
+  justify-content: center;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-stats__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-stats__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  font-size: 28px;
+  color: var(--fena-accent);
+}
+
+.home-stats__value {
+  display: flex;
+  align-items: baseline;
+  margin: 0 0 4px;
+  font-family: var(--eduvers-font-two);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--eduvers-black);
+}
+
+/* El tema de odometer fija Helvetica; se fuerza la tipografía de títulos. */
+.home-stats__value .odometer {
+  font-family: inherit !important;
+  line-height: 1;
+}
+
+.home-stats__label {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--eduvers-gray);
+}
+
+@media (max-width: 991px) {
+  .home-stats {
+    grid-template-columns: repeat(2, minmax(0, 250px));
+    row-gap: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-stats {
+    gap: 24px 12px;
+  }
+
+  .home-stats__item {
+    gap: 10px;
+  }
+
+  .home-stats__icon {
+    width: 48px;
+    height: 48px;
+    font-size: 21px;
+  }
+
+  .home-stats__value {
+    font-size: 28px;
+  }
+
+  .home-stats__label {
+    font-size: 13px;
+  }
+}
+
+/* Próximos eventos de la home: mismo lenguaje que los accesos rápidos (foto,
+   degradado azul marino, línea roja, zoom en el hover) en un mosaico donde
+   el evento más cercano va destacado. El h2 queda solo para lectores de
+   pantalla. */
+.home-events {
+  position: relative;
+  padding: 80px 0 120px;
+}
+
+.home-events__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-events__grid li:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.home-events__grid li:nth-child(2) {
+  grid-column: span 2;
+}
+
+.home-events__card {
+  position: relative;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .18);
+}
+
+.home-events__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.home-events__card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(var(--eduvers-black-rgb), 0) 30%,
+      rgba(var(--eduvers-black-rgb), .55) 60%,
+      rgba(var(--eduvers-black-rgb), .92) 100%);
+}
+
+/* Fecha: azul marino con el mes en amarillo (acento solo sobre azul). */
+.home-events__date {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 58px;
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: var(--eduvers-black);
+  line-height: 1;
+}
+
+.home-events__day {
+  font-family: var(--eduvers-font-two);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--eduvers-white);
+}
+
+.home-events__month {
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--fena-accent);
+}
+
+.home-events__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: 20px 22px;
+}
+
+.home-events__content::before {
+  content: "";
+  display: block;
+  width: 36px;
+  height: 3px;
+  margin-bottom: 12px;
+  background-color: var(--eduvers-base);
+  transition: width 400ms ease;
+}
+
+.home-events__title {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--eduvers-white);
+}
+
+.home-events__summary {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(var(--eduvers-white-rgb), .9);
+}
+
+.home-events__grid li:first-child .home-events__content {
+  padding: 32px;
+}
+
+.home-events__grid li:first-child .home-events__title {
+  font-size: 30px;
+}
+
+.home-events__grid li:first-child .home-events__summary {
+  font-size: 16px;
+}
+
+.home-events__card:hover .home-events__img,
+.home-events__card:focus-visible .home-events__img {
+  transform: scale(1.06);
+}
+
+.home-events__card:hover .home-events__content::before,
+.home-events__card:focus-visible .home-events__content::before {
+  width: 100%;
+}
+
+.home-events__card:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 3px;
+}
+
+.home-events__more {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 991px) {
+  .home-events__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 230px;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-events {
+    padding: 60px 0 80px;
+  }
+
+  .home-events__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+    gap: 16px;
+  }
+
+  .home-events__grid li:first-child,
+  .home-events__grid li:nth-child(2) {
+    grid-column: auto;
+  }
+
+  .home-events__grid li:first-child {
+    grid-row: span 1;
+  }
+
+  .home-events__grid li:first-child .home-events__content,
+  .home-events__content {
+    padding: 16px 18px;
+  }
+
+  .home-events__grid li:first-child .home-events__title,
+  .home-events__title {
+    font-size: 19px;
+  }
+
+  .home-events__grid li:first-child .home-events__summary {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-events__img,
+  .home-events__content::before {
+    transition: none;
+  }
+
+  .home-events__card:hover .home-events__img,
+  .home-events__card:focus-visible .home-events__img {
+    transform: none;
+  }
+}
+
+/* Evento en vivo. La marca va en rojo con texto blanco (4.5:1) y un punto
+   que late; el reproductor de YouTube ocupa la tarjeta grande y el título
+   y el link pasan a una franja azul debajo, porque cualquier capa encima
+   del iframe taparía sus controles. */
+.home-events__live {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px 5px 9px;
+  border-radius: 4px;
+  background-color: var(--eduvers-base);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--eduvers-white);
+}
+
+.home-events__live::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--eduvers-white);
+  animation: home-events-live 1.4s ease-in-out infinite;
+}
+
+@keyframes home-events-live {
+  50% {
+    opacity: .25;
+  }
+}
+
+.home-events__live--corner {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+}
+
+.home-events__card--stream {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-events__card--stream::after {
+  content: none;
+}
+
+.home-events__player {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  background-color: #000;
+}
+
+/* Sin interacción directa con el iframe: así YouTube no muestra su barra de
+   título ni sus menús al pasar el mouse. Se maneja con los botones propios. */
+.home-events__player-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.home-events__player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+
+.home-events__player-controls {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  display: flex;
+  gap: 8px;
+}
+
+.home-events__player-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: rgba(var(--eduvers-black-rgb), .75);
+  font-size: 15px;
+  color: var(--eduvers-white);
+  cursor: pointer;
+  transition: background-color 200ms ease;
+}
+
+.home-events__player-btn:hover {
+  background-color: var(--eduvers-base);
+}
+
+.home-events__player-btn:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 2px;
+}
+
+.home-events__stream-info {
+  display: block;
+  flex: none;
+  padding: 18px 24px 20px;
+  border-top: 3px solid var(--eduvers-base);
+}
+
+.home-events__stream-info .home-events__live {
+  margin-bottom: 10px;
+}
+
+.home-events__stream-info:hover .home-events__title,
+.home-events__stream-info:focus-visible .home-events__title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.home-events__stream-info:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: -3px;
+}
+
+.home-events__grid .home-events__stream-item .home-events__title {
+  font-size: 24px;
+}
+
+.home-events__grid .home-events__stream-item .home-events__summary {
+  font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .home-events__grid li.home-events__stream-item {
+    grid-row: span 2;
+  }
+
+  .home-events__stream-info {
+    padding: 14px 18px 16px;
+  }
+
+  .home-events__grid .home-events__stream-item .home-events__title {
+    font-size: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-events__live::before {
+    animation: none;
+  }
+}
+
+/* "Comprometidos con el desarrollo" (HomeAbout): fondo #F8F4F2 para alternar
+   con el blanco de eventos. Las piezas que en la plantilla usaban ese mismo
+   color pasan a blanco para no fundirse con el fondo. Cajas azul marino con
+   iconos amarillos y esquinas de 8px, como accesos, cifras y eventos. */
+.about-two {
+  background-color: var(--eduvers-primary);
+}
+
+/* height: auto para que manden las proporciones de abajo y no el atributo
+   height del HTML (tamaño real de la foto). */
+.about-two__img img,
+.about-two__img-2 img {
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .18);
+}
+
+.about-two__img img {
+  aspect-ratio: 330 / 460;
+}
+
+.about-two__img-2 img {
+  aspect-ratio: 250 / 420;
+  object-position: 30% center;
+}
+
+.about-two__video-icon {
+  background-color: var(--eduvers-black);
+  color: var(--fena-accent);
+}
+
+.about-two__video-icon:hover {
+  background-color: var(--eduvers-base);
+  color: var(--eduvers-white);
+}
+
+.about-two__video-link .ripple,
+.about-two__video-icon .ripple:before,
+.about-two__video-icon .ripple:after {
+  box-shadow: 0 0 0 0 rgba(var(--eduvers-black-rgb), .45);
+}
+
+.about-two__video-link a:focus-visible {
+  display: inline-block;
+  border-radius: 50%;
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 4px;
+}
+
+.about-two__award-box {
+  background-color: var(--eduvers-black);
+  border-radius: 8px;
+}
+
+.about-two__award-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  background-color: rgba(var(--eduvers-white-rgb), .08);
+}
+
+.about-two__award-icon span {
+  font-size: 28px;
+  color: var(--fena-accent);
+}
+
+.about-two__award-text {
+  color: rgba(var(--eduvers-white-rgb), .9);
+}
+
+.about-two__happy-student {
+  background-color: var(--eduvers-white);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .12);
+}
+
+.about-two__happy-student-count h3,
+.about-two__happy-student-count span {
+  color: var(--eduvers-black);
+}
+
+.about-two__happy-student-text {
+  color: var(--eduvers-gray);
+}
+
+.about-two__btg-text {
+  border-left: 3px solid var(--eduvers-base);
+  background-color: var(--eduvers-white);
+  border-radius: 0 8px 8px 0;
+  color: var(--eduvers-black);
+}
+
+/* Puntos: grilla de 2 × 2 alineada (antes eran dos listas sueltas). */
+.about-two__points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-two__points li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--eduvers-font-two);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--eduvers-black);
+}
+
+.about-two__points-icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  font-size: 18px;
+  color: var(--fena-accent);
+}
+
+.about-two__btn-box {
+  margin-top: 32px;
+}
+
+@media (max-width: 575px) {
+  .about-two__points {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-two__video-link .ripple,
+  .about-two__video-icon .ripple:before,
+  .about-two__video-icon .ripple:after {
+    animation: none;
+  }
+}
+
+/* Modalidades (HomeModalidades): fondo blanco tras el #F8F4F2 de
+   "Comprometidos". 6 tarjetas en 3 columnas, toda la tarjeta es el enlace:
+   foto arriba y mitad azul marino abajo, con el icono amarillo en la esquina
+   donde se juntan. Mismo lenguaje que el resto de la home: esquinas de 8px,
+   zoom de la foto y línea roja que crece en el hover. */
+.home-modalidades {
+  padding: 70px 0 80px;
+}
+
+.home-modalidades .section-title {
+  margin-bottom: 36px;
+}
+
+.home-modalidades__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-modalidades__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  box-shadow: 0 14px 34px rgba(var(--eduvers-black-rgb), .18);
+}
+
+.home-modalidades__media {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.home-modalidades__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.home-modalidades__body {
+  position: relative;
+  flex: 1;
+  padding: 24px 24px 26px;
+}
+
+/* Línea roja en la unión foto/azul: crece de izquierda a derecha. */
+.home-modalidades__body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background-color: var(--eduvers-base);
+  transition: width 400ms ease;
+}
+
+/* Icono montado sobre la unión, en la esquina derecha. */
+.home-modalidades__icon {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 3px solid var(--eduvers-black);
+  border-radius: 8px;
+  background-color: var(--eduvers-black);
+  box-shadow: 0 0 0 1px rgba(var(--eduvers-white-rgb), .12);
+  font-size: 24px;
+  color: var(--fena-accent);
+  transform: translateY(-50%);
+}
+
+.home-modalidades__title {
+  margin: 0 76px 8px 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--eduvers-white);
+}
+
+.home-modalidades__text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(var(--eduvers-white-rgb), .75);
+}
+
+.home-modalidades__card:hover .home-modalidades__img,
+.home-modalidades__card:focus-visible .home-modalidades__img {
+  transform: scale(1.06);
+}
+
+.home-modalidades__card:hover .home-modalidades__body::before,
+.home-modalidades__card:focus-visible .home-modalidades__body::before {
+  width: 100%;
+}
+
+.home-modalidades__card:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 991px) {
+  .home-modalidades {
+    padding: 60px 0 70px;
+  }
+
+  .home-modalidades__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .home-modalidades {
+    padding: 50px 0 60px;
+  }
+
+  .home-modalidades .section-title {
+    margin-bottom: 28px;
+  }
+
+  .home-modalidades__list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .home-modalidades__body {
+    padding: 20px 20px 22px;
+  }
+
+  .home-modalidades__icon {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .home-modalidades__title {
+    margin-right: 64px;
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-modalidades__img,
+  .home-modalidades__body::before {
+    transition: none;
+  }
+
+  .home-modalidades__card:hover .home-modalidades__img,
+  .home-modalidades__card:focus-visible .home-modalidades__img {
     transform: none;
   }
 }

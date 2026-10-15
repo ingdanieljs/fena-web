@@ -29,7 +29,7 @@ defineProps({
       <p class="blog-two__text">{{ post.excerpt }}</p>
       <div class="blog-two__read-more-box">
         <NuxtLink :to="`/noticias/${post.slug}`" class="blog-two__read-more">
-          Leer más <span class="fas fa-arrow-right"></span>
+          Leer más <span class="far fa-chevron-right"></span>
         </NuxtLink>
       </div>
     </div>

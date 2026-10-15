@@ -52,7 +52,7 @@
                       <div class="about-one__btn-and-video">
                           <div class="about-one__btn-box">
                               <NuxtLink to="/institucion" class="thm-btn">Conoce más<span
-                                      class="fas fa-arrow-right"></span></NuxtLink>
+                                      class="far fa-chevron-right"></span></NuxtLink>
                           </div>
                           <div class="about-one__video-link">
                               <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">

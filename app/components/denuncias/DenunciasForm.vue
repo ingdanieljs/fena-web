@@ -369,7 +369,7 @@ id="dnComentarios" class="dn-textarea" style="height:110px" name="comentarios"
                       <button id="dnPrev" type="button" class="dn-btn-ghost" style="visibility:hidden">
                           <span class="fas fa-arrow-left"></span> Anterior</button>
                       <button id="dnNext" type="button" class="thm-btn">Continuar<span
-                              class="fas fa-arrow-right"></span></button>
+                              class="far fa-chevron-right"></span></button>
                       <button id="dnSubmit" type="submit" class="thm-btn dn-hidden">Enviar denuncia o
                           reclamo<span class="fas fa-paper-plane"></span></button>
                   </div>
@@ -394,7 +394,7 @@ id="dnCopy"
                                   <strong>24 horas</strong>.</span></li>
                       </ul>
                       <NuxtLink id="dnTrackLink" to="/denuncias/seguimiento" class="thm-btn">Consultar estado<span
-                              class="fas fa-arrow-right"></span></NuxtLink>
+                              class="far fa-chevron-right"></span></NuxtLink>
                   </div>
               </div>
 

@@ -25,7 +25,7 @@
                               <h4>Ingresar denuncia o reclamo</h4>
                               <p>Puedes hacerlo de forma identificada o anónima.</p>
                           </span>
-                          <span class="dn-action__arrow fas fa-arrow-right"></span>
+                          <span class="dn-action__arrow far fa-chevron-right"></span>
                       </NuxtLink>
                       <NuxtLink to="/denuncias/seguimiento" class="dn-action dn-action--light">
                           <span class="dn-action__icon"><i class="fas fa-search"></i></span>
@@ -33,7 +33,7 @@
                               <h4>Consultar estado</h4>
                               <p>Con tu número de caso y el correo registrado.</p>
                           </span>
-                          <span class="dn-action__arrow fas fa-arrow-right"></span>
+                          <span class="dn-action__arrow far fa-chevron-right"></span>
                       </NuxtLink>
                       <div class="dn-notice dn-notice--info">
                           <i class="fas fa-user-shield"></i>

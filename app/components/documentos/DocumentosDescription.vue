@@ -201,7 +201,7 @@ type="email" placeholder="Correo electrónico" name="email"
                                                   <button
 type="submit"
                                                       class="thm-btn review-form-one__btn">Enviar comentario<span
-                                                          class="fas fa-arrow-right"></span>
+                                                          class="far fa-chevron-right"></span>
                                                   </button>
                                               </div>
                                           </div>

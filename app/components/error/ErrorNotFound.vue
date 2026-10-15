@@ -16,7 +16,7 @@
                           </form>
                           <div class="btn-box">
                               <NuxtLink to="/" class="thm-btn">
-                                  Volver al inicio<span class="fas fa-arrow-right"></span>
+                                  Volver al inicio<span class="far fa-chevron-right"></span>
                               </NuxtLink>
                           </div>
                       </div>

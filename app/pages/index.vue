@@ -6,12 +6,12 @@ useHead({ title: "" });
   <div>
     <HomeBanner />
     <HomeFeatures />
+    <HomeCounter />
+    <HomeEvents />
     <HomeAbout />
     <HomeModalidades />
     <HomeGallery />
     <HomeAffiliation />
-    <HomeCounter />
-    <HomeEvents />
     <HomeResearch />
     <HomeTestimonials />
     <HomeFederations />

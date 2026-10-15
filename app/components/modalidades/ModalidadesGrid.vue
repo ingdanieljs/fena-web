@@ -188,7 +188,7 @@ class="course-grid__discount-shape-bg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -256,7 +256,7 @@ src="/assets/images/courses/courses-three-client-img-1.jpg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -324,7 +324,7 @@ src="/assets/images/courses/courses-three-client-img-2.jpg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -391,7 +391,7 @@ src="/assets/images/courses/courses-three-client-img-3.jpg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -459,7 +459,7 @@ src="/assets/images/courses/courses-three-client-img-4.jpg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -527,7 +527,7 @@ src="/assets/images/courses/courses-three-client-img-5.jpg"
                                           <div class="courses-three__btn-and-client-box">
                                               <div class="courses-three__btn-box">
                                                   <NuxtLink to="/modalidades" class="thm-btn">Ver convocatoria<span
-                                                          class="fas fa-arrow-right"></span></NuxtLink>
+                                                          class="far fa-chevron-right"></span></NuxtLink>
                                               </div>
                                               <div class="courses-three__client-box">
                                                   <div class="courses-three__client-img">
@@ -570,7 +570,7 @@ src="/assets/images/courses/courses-three-client-img-6.jpg"
                       </div>
                       <div class="courses-grid__btn-box">
                           <NuxtLink to="/modalidades" class="thm-btn">Ver más eventos
-                              <span class="fas fa-arrow-right"></span>
+                              <span class="far fa-chevron-right"></span>
                           </NuxtLink>
                       </div>
                       <div class="blog-listing__pagination">

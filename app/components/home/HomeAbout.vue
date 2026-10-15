@@ -1,3 +1,12 @@
+<script setup>
+const points = [
+  { icon: "fas fa-award", text: "Eventos avalados y reconocidos" },
+  { icon: "fas fa-user-check", text: "Jueces y entrenadores certificados" },
+  { icon: "fas fa-chart-line", text: "Desarrollo técnico y alto rendimiento" },
+  { icon: "fas fa-seedling", text: "Formación de futuras promesas" },
+];
+</script>
+
 <template>
   <section id="about" class="about-two">
       <div class="container">
@@ -6,18 +15,18 @@
                   <div class="about-two__left">
                       <div class="about-two__img-box">
                           <div class="about-two__img">
-                              <img src="/assets/images/resources/about-two-img-1.jpg" alt="">
+                              <img src="/assets/images/img_bank/santiago.webp" alt="" width="768" height="1024">
                               <div class="about-two__video-link">
-                                  <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                                  <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup" aria-label="Ver video de la federación">
                                       <div class="about-two__video-icon">
-                                          <span class="fa fa-play"></span>
+                                          <span class="fas fa-play" aria-hidden="true"></span>
                                           <i class="ripple"></i>
                                       </div>
                                   </a>
                               </div>
                               <div class="about-two__award-box">
                                   <div class="about-two__award-icon">
-                                      <span class="icon-trophy"></span>
+                                      <span class="fas fa-stopwatch" aria-hidden="true"></span>
                                   </div>
                                   <div class="about-two__award-content">
                                       <div class="about-two__award-count">
@@ -37,7 +46,7 @@
                               </div>
                           </div>
                           <div class="about-two__img-2">
-                              <img src="/assets/images/resources/about-two-img-2.jpg" alt="">
+                              <img src="/assets/images/img_bank/img_8.webp" alt="" width="1024" height="683">
                           </div>
                       </div>
                   </div>
@@ -54,48 +63,18 @@
                           formación deportiva, la competencia nacional e internacional y la representación
                           del Ecuador en todo el mundo.</p>
                       <h3 class="about-two__btg-text">Un compromiso con la excelencia en el deporte
-                          acuático<span>........</span></h3>
-                      <div class="about-two__points-box-inner">
-                          <ul class="about-two__points-box">
-                              <li>
-                                  <div class="icon">
-                                      <span class="icon-check-mark"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h3>Eventos avalados y reconocidos</h3>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="icon-check-mark"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h3>Jueces y entrenadores certificados</h3>
-                                  </div>
-                              </li>
-                          </ul>
-                          <ul class="about-two__points-box">
-                              <li>
-                                  <div class="icon">
-                                      <span class="icon-check-mark"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h3>Desarrollo técnico y alto rendimiento</h3>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="icon-check-mark"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h3>Formación de futuras promesas</h3>
-                                  </div>
-                              </li>
-                          </ul>
-                      </div>
+                          acuático</h3>
+                      <ul class="about-two__points">
+                          <li v-for="point in points" :key="point.text">
+                              <span class="about-two__points-icon">
+                                  <span :class="point.icon" aria-hidden="true"></span>
+                              </span>
+                              {{ point.text }}
+                          </li>
+                      </ul>
                       <div class="about-two__btn-box">
                           <NuxtLink to="/institucion" class="thm-btn">Conoce la federación<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>

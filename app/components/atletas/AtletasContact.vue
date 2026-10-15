@@ -65,7 +65,7 @@
               </div>
               <div class="team-details-contact__btn-box">
                 <button type="submit" class="thm-btn">
-                  enviar mensaje<span class="fas fa-arrow-right"></span>
+                  enviar mensaje<span class="far fa-chevron-right"></span>
                 </button>
               </div>
             </div>

@@ -136,7 +136,7 @@
                           </ul>
                           <div class="event-details__btn-box">
                               <NuxtLink to="/contacto" class="thm-btn">Inscribirme
-                                  <span class="fas fa-arrow-right"></span></NuxtLink>
+                                  <span class="far fa-chevron-right"></span></NuxtLink>
                           </div>
                       </div>
                   </div>

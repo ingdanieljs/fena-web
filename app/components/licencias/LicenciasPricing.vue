@@ -23,7 +23,7 @@
                       </ul>
                       <div class="pricing-one__btn-box">
                           <NuxtLink to="/licencias" class="thm-btn">Solicitar<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>
@@ -45,7 +45,7 @@
                       </ul>
                       <div class="pricing-one__btn-box">
                           <NuxtLink to="/licencias" class="thm-btn">Solicitar<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>
@@ -67,7 +67,7 @@
                       </ul>
                       <div class="pricing-one__btn-box">
                           <NuxtLink to="/licencias" class="thm-btn">Solicitar<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>
@@ -89,7 +89,7 @@
                       </ul>
                       <div class="pricing-one__btn-box">
                           <NuxtLink to="/licencias" class="thm-btn">Solicitar<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>

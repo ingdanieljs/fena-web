@@ -32,7 +32,7 @@ const onSubmit = () => {
     </div>
     <div class="form-group message-btn">
       <button class="thm-btn" type="submit">
-        {{ buttonText }} <span class="fas fa-arrow-right"></span>
+        {{ buttonText }} <span class="far fa-chevron-right"></span>
       </button>
     </div>
     <div class="result">{{ result }}</div>

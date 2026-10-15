@@ -21,7 +21,7 @@
                   fortaleciendo la formación deportiva en todo el país.</p>
               <div class="main-slider-two__btn-box">
                   <NuxtLink to="/modalidades" class="thm-btn">Ver calendario
-                      <span class="fas fa-arrow-right"></span>
+                      <span class="far fa-chevron-right"></span>
                   </NuxtLink>
               </div>
           </div>

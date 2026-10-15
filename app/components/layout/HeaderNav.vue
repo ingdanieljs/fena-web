@@ -61,7 +61,7 @@ const closedItem = ref(null);
         </div>
         <div :class="p('btn-box')">
           <NuxtLink to="/calendario" class="thm-btn">
-            Ver calendario<span class="fas fa-arrow-right"></span>
+            Ver calendario<span class="far fa-chevron-right"></span>
           </NuxtLink>
         </div>
       </div>

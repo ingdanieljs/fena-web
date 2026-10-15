@@ -110,7 +110,7 @@ type="text" name="Phone" placeholder="Natación, Aguas Abiertas..."
                                       </div>
                                       <div class="contact-three__btn-box">
                                           <button type="submit" class="thm-btn">Enviar
-                                              solicitud<span class="fas fa-arrow-right"></span></button>
+                                              solicitud<span class="far fa-chevron-right"></span></button>
                                       </div>
                                   </div>
                               </div>

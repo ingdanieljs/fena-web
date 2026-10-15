@@ -21,7 +21,7 @@ class="career-area__bg-2"
                               y la de tu club con la programación nacional de FENA.</p>
                           <div class="career-area__btn-box">
                               <NuxtLink to="/modalidades/detalle" class="thm-btn">Ver calendario<span
-                                      class="fas fa-arrow-right"></span></NuxtLink>
+                                      class="far fa-chevron-right"></span></NuxtLink>
                           </div>
                       </div>
                   </div>
@@ -33,7 +33,7 @@ class="career-area__bg-2"
                               deportistas participen en los eventos nacionales e internacionales.</p>
                           <div class="career-area__btn-box">
                               <NuxtLink to="/contacto" class="thm-btn">Descargar<span
-                                      class="fas fa-arrow-right"></span></NuxtLink>
+                                      class="far fa-chevron-right"></span></NuxtLink>
                           </div>
                       </div>
                   </div>

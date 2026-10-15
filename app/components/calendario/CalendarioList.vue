@@ -201,7 +201,7 @@ class="course-grid__discount-shape-bg"
                               <div class="course-list__btn-and-client-info">
                                   <div class="course-list__btn-box">
                                       <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                          Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                          Ver convocatoria<span class="far fa-chevron-right"></span>
                                       </NuxtLink>
                                   </div>
                                   <div class="course-list__client-box">
@@ -261,7 +261,7 @@ class="course-grid__discount-shape-bg"
                               <div class="course-list__btn-and-client-info">
                                   <div class="course-list__btn-box">
                                       <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                          Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                          Ver convocatoria<span class="far fa-chevron-right"></span>
                                       </NuxtLink>
                                   </div>
                                   <div class="course-list__client-box">
@@ -320,7 +320,7 @@ class="course-grid__discount-shape-bg"
                               <div class="course-list__btn-and-client-info">
                                   <div class="course-list__btn-box">
                                       <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                          Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                          Ver convocatoria<span class="far fa-chevron-right"></span>
                                       </NuxtLink>
                                   </div>
                                   <div class="course-list__client-box">
@@ -380,7 +380,7 @@ class="course-grid__discount-shape-bg"
                               <div class="course-list__btn-and-client-info">
                                   <div class="course-list__btn-box">
                                       <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                          Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                          Ver convocatoria<span class="far fa-chevron-right"></span>
                                       </NuxtLink>
                                   </div>
                                   <div class="course-list__client-box">
@@ -440,7 +440,7 @@ class="course-grid__discount-shape-bg"
                               <div class="course-list__btn-and-client-info">
                                   <div class="course-list__btn-box">
                                       <NuxtLink to="/modalidades/detalle" class="thm-btn">
-                                          Ver convocatoria<span class="fas fa-arrow-right"></span>
+                                          Ver convocatoria<span class="far fa-chevron-right"></span>
                                       </NuxtLink>
                                   </div>
                                   <div class="course-list__client-box">
@@ -459,7 +459,7 @@ class="course-grid__discount-shape-bg"
                       <!--Course List Single End-->
                       <div class="blog-list__btn-box-2">
                           <NuxtLink to="/modalidades" class="thm-btn">
-                              Ver más eventos<span class="fas fa-arrow-right"></span>
+                              Ver más eventos<span class="far fa-chevron-right"></span>
                           </NuxtLink>
                       </div>
                       <div class="blog-listing__pagination">

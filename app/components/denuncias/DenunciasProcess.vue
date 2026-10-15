@@ -28,7 +28,7 @@
           </div>
           <div class="text-center" style="margin-top: 50px;">
               <NuxtLink to="/denuncias/ingresar" class="thm-btn">Ingresar denuncia o reclamo<span
-                      class="fas fa-arrow-right"></span></NuxtLink>
+                      class="far fa-chevron-right"></span></NuxtLink>
           </div>
       </div>
   </section>

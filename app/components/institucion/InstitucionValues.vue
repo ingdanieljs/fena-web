@@ -227,7 +227,7 @@
                       </div>
                       <div class="about-three__btn-box">
                           <NuxtLink to="/institucion" class="thm-btn">Conoce más<span
-                                  class="fas fa-arrow-right"></span></NuxtLink>
+                                  class="far fa-chevron-right"></span></NuxtLink>
                       </div>
                   </div>
               </div>

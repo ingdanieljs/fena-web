@@ -44,7 +44,7 @@
 type="submit" class="thm-btn contact-page__btn"
                                               data-loading-text="Espere por favor...">
                                               Enviar mensaje
-                                              <span class="fas fa-arrow-right"></span>
+                                              <span class="far fa-chevron-right"></span>
                                           </button>
                                       </div>
                                   </div>

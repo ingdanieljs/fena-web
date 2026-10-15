@@ -8,8 +8,19 @@ export const features = [
 ];
 
 export const stats = [
-  { icon: "icon-medal", value: 2300, label: "Deportistas activos" },
-  { icon: "icon-user", value: 1920, label: "Clubes afiliados" },
-  { icon: "icon-open-book", value: 5.2, label: "Eventos al año" },
-  { icon: "icon-trophy", value: 500, suffix: "+", label: "Récords nacionales" },
+  { icon: "fas fa-swimmer", value: 2300, label: "Deportistas activos" },
+  { icon: "fas fa-shield-alt", value: 1920, label: "Clubes afiliados" },
+  { icon: "fas fa-calendar-alt", value: 5.2, label: "Eventos al año" },
+  { icon: "fas fa-stopwatch", value: 500, suffix: "+", label: "Récords nacionales" },
+];
+
+// Fotos provisionales salvo Natación y Aguas Abiertas: el banco todavía no
+// tiene fotos de clavados, polo, artística ni masters.
+export const modalidades = [
+  { image: "/assets/images/img_bank/img_10.webp", icon: "fas fa-swimmer", title: "Natación", text: "Eventos de piscina nacionales y avalados, rankings y récords.", to: "/modalidades" },
+  { image: "/assets/images/img_bank/img_4.webp", icon: "fas fa-water", title: "Aguas Abiertas", text: "Competencias en aguas naturales: 3, 5, 7.5 y 10 km y relevos.", to: "/modalidades" },
+  { image: "/assets/images/home-modalidades/clavados.webp", icon: "fas fa-swimming-pool", title: "Clavados", text: "Selectivos, marcas base, chequeos técnicos y campeonatos nacionales.", to: "/modalidades" },
+  { image: "/assets/images/img_bank/img_7.webp", icon: "fas fa-volleyball-ball", title: "Polo Acuático", text: "Selectivos, campeonatos nacionales y documentos técnicos.", to: "/modalidades" },
+  { image: "/assets/images/img_bank/img_3.webp", icon: "fas fa-music", title: "Natación Artística", text: "Convocatorias, eventos, resultados y documentos técnicos.", to: "/modalidades" },
+  { image: "/assets/images/img_bank/img_9.webp", icon: "fas fa-medal", title: "Masters", text: "Competencias, reglas y récords máster en 25 m, 50 m y relevos.", to: "/modalidades" },
 ];
