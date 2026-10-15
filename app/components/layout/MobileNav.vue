@@ -59,7 +59,7 @@ const toggle = (label) => {
       </ul>
       <div class="mobile-nav__top">
         <div class="mobile-nav__social">
-          <a v-for="social in socials" :key="social.name" :href="social.url" :class="social.icon" :aria-label="social.name"></a>
+          <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener" :class="social.icon" :aria-label="social.name"></a>
         </div>
       </div>
     </div>

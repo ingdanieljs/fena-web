@@ -1,237 +1,89 @@
+<script setup>
+import { pillars } from "~/data/institucion.js";
+
+// Pestañas accesibles (role="tablist"): flechas izquierda/derecha cambian de pestaña.
+const active = ref(pillars[0].id);
+const tabs = ref([]);
+
+const select = (index) => {
+  const pillar = pillars[(index + pillars.length) % pillars.length];
+  active.value = pillar.id;
+  nextTick(() => tabs.value.find((tab) => tab.id === `tab-${pillar.id}`)?.focus());
+};
+
+const onKeydown = (event, index) => {
+  if (event.key === "ArrowRight") select(index + 1);
+  if (event.key === "ArrowLeft") select(index - 1);
+};
+</script>
+
 <template>
-  <section class="about-three about-four">
-      <div class="container">
-          <div class="row">
-              <div class="col-xl-6 wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
-                  <div class="about-three__left">
-                      <div class="about-three__img-box">
-                          <div class="about-three__img">
-                              <img src="/assets/images/resources/about-three-img-1.jpg" alt="">
-                          </div>
-                          <div class="about-three__img-2">
-                              <img src="/assets/images/resources/about-three-img-2.jpg" alt="">
-                          </div>
-                          <div class="about-three__experience-box">
-                              <div class="about-three__experience-count">
-                                  <h3 class="odometer" data-count="35">00</h3>
-                                  <span>+</span>
-                              </div>
-                              <p class="about-three__experience-count-text">Años de experiencia</p>
-                          </div>
-                          <div class="about-three__shape-1"></div>
-                      </div>
-                  </div>
+  <section class="inst-about">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-5 col-lg-6">
+          <div class="inst-about__media">
+            <img src="/assets/images/img_bank/img_3.webp" alt="" width="683" height="1024" class="inst-about__img">
+            <div class="inst-about__stat">
+              <span class="inst-about__stat-icon">
+                <span class="fas fa-trophy" aria-hidden="true"></span>
+              </span>
+              <div>
+                <p class="inst-about__stat-value"><span class="odometer" data-count="35">00</span>+</p>
+                <p class="inst-about__stat-label">Años de experiencia</p>
               </div>
-              <div class="col-xl-6">
-                  <div class="about-three__right">
-                      <div class="section-title text-left sec-title-animation animation-style2">
-                          <h2 class="section-title__title title-animation">El organismo rector de la natación en
-                              <span>Ecuador</span></h2>
-                      </div>
-                      <p class="about-three__text">Planificamos, dirigimos y regulamos las disciplinas acuáticas,
-                          promoviendo la formación deportiva y la representación del Ecuador en la competencia
-                          internacional.</p>
-                      <div class="about-three__tab tab-box">
-                          <ul class="tabs-button-box clearfix">
-                              <li data-tab="#mission" class="tab-btn-item active-btn">
-                                  <h3>Misión</h3>
-                              </li>
-                              <li data-tab="#vision" class="tab-btn-item">
-                                  <h3> Visión</h3>
-                              </li>
-                              <li data-tab="#history" class="tab-btn-item">
-                                  <h3> Compromiso</h3>
-                              </li>
-                          </ul>
-                          <div class="tabs-content tabs-content-box">
-                              <!--Start Single Tab Content-->
-                              <div id="mission" class="tab tab-active">
-                                  <div class="about-three__single-tab">
-                                      <div class="about-three__single-tab-inner">
-                                          <p class="about-three__single-text">Planificar, dirigir, regular y
-                                              promover el desarrollo de la natación y las disciplinas acuáticas
-                                              en el Ecuador, impulsando la formación deportiva y la competencia
-                                              nacional e internacional.
-                                          </p>
-                                          <div class="row">
-                                              <div class="col-xl-6">
-                                                  <ul class="about-three__single-points">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                              <div class="col-xl-6">
-                                                  <ul
-                                                      class="about-three__single-points about-three__single-points-2">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!--End Single Tab Content-->
-
-                              <!--Start Single Tab Content-->
-                              <div id="vision" class="tab">
-                                  <div class="about-three__single-tab">
-                                      <div class="about-three__single-tab-inner">
-                                          <p class="about-three__single-text">Ser una federación referente en la
-                                              región, con deportistas de alto rendimiento, clubes fortalecidos
-                                              y una natación masificada que represente con orgullo al Ecuador
-                                              en el mundo.
-                                          </p>
-                                          <div class="row">
-                                              <div class="col-xl-6">
-                                                  <ul class="about-three__single-points">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                              <div class="col-xl-6">
-                                                  <ul class="about-three__single-points">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!--End Single Tab Content-->
-
-                              <!--Start Single Tab Content-->
-                              <div id="history" class="tab">
-                                  <div class="about-three__single-tab">
-                                      <div class="about-three__single-tab-inner">
-                                          <p class="about-three__single-text">Nuestro compromiso es la protección
-                                              del deportista, la competencia justa, el desarrollo técnico y la
-                                              transparencia en cada decisión de la natación ecuatoriana.
-                                          </p>
-                                          <div class="row">
-                                              <div class="col-xl-6">
-                                                  <ul class="about-three__single-points">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                              <div class="col-xl-6">
-                                                  <ul class="about-three__single-points">
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Protección al deportista</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Competencia justa y transparente</p>
-                                                      </li>
-                                                      <li>
-                                                          <div class="icon">
-                                                              <span class="icon-check-mark"></span>
-                                                          </div>
-                                                          <p>Desarrollo técnico y masificación</p>
-                                                      </li>
-                                                  </ul>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <!--End Single Tab Content-->
-                          </div>
-                      </div>
-                      <div class="about-three__btn-box">
-                          <NuxtLink to="/institucion" class="thm-btn">Conoce más<span
-                                  class="far fa-chevron-right"></span></NuxtLink>
-                      </div>
-                  </div>
-              </div>
+            </div>
           </div>
+        </div>
+        <div class="col-xl-7 col-lg-6">
+          <div class="inst-about__content">
+            <div class="section-title text-left sec-title-animation animation-style2">
+              <h2 class="section-title__title title-animation">El organismo rector de la natación en
+                <span>Ecuador</span></h2>
+            </div>
+            <p class="inst-about__text">Planificamos, dirigimos y regulamos las disciplinas acuáticas,
+              promoviendo la formación deportiva y la representación del Ecuador en la competencia
+              internacional.</p>
+            <div class="inst-about__tabs" role="tablist" aria-label="Misión, visión y compromiso">
+              <button
+                v-for="(pillar, index) in pillars"
+                :id="`tab-${pillar.id}`"
+                ref="tabs"
+                :key="pillar.id"
+                type="button"
+                role="tab"
+                :class="['inst-about__tab', { 'is-active': active === pillar.id }]"
+                :aria-selected="active === pillar.id"
+                :aria-controls="`panel-${pillar.id}`"
+                :tabindex="active === pillar.id ? 0 : -1"
+                @click="active = pillar.id"
+                @keydown="onKeydown($event, index)"
+              >
+                {{ pillar.label }}
+              </button>
+            </div>
+            <div
+              v-for="pillar in pillars"
+              v-show="active === pillar.id"
+              :id="`panel-${pillar.id}`"
+              :key="pillar.id"
+              role="tabpanel"
+              :aria-labelledby="`tab-${pillar.id}`"
+              class="inst-about__panel"
+            >
+              <p class="inst-about__panel-text">{{ pillar.text }}</p>
+              <ul class="about-two__points">
+                <li v-for="point in pillar.points" :key="point.text">
+                  <span class="about-two__points-icon">
+                    <span :class="point.icon" aria-hidden="true"></span>
+                  </span>
+                  {{ point.text }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </section>
 </template>

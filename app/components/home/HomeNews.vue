@@ -11,7 +11,7 @@ import news from "~/data/news.js";
         </h2>
       </div>
       <ul class="home-news__list">
-        <li v-for="post in news" :key="post.slug">
+        <li v-for="post in news.slice(0, 3)" :key="post.slug">
           <NewsCard :post="post" />
         </li>
       </ul>

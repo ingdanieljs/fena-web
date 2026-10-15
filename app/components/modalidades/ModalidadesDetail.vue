@@ -1,3 +1,7 @@
+<script setup>
+import socials from "~/constants/socials.js";
+</script>
+
 <template>
   <section class="course-details">
       <div class="container">
@@ -657,10 +661,7 @@ src="/assets/images/courses/course-details-Instructor-img.jpg"
                                                       formación deportiva y vela por la representación del Ecuador
                                                       en los escenarios acuáticos.</p>
                                                   <div class="course-details__Instructor-social">
-                                                      <a href="#"><span class="fab fa-linkedin-in"></span></a>
-                                                      <a href="#"><span class="fab fa-pinterest-p"></span></a>
-                                                      <a href="#"><span class="fab fa-facebook-f"></span></a>
-                                                      <a href="#"><span class="fab fa-instagram"></span></a>
+                                                      <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener" :aria-label="social.name"><span :class="social.icon"></span></a>
                                                   </div>
                                               </div>
                                           </div>

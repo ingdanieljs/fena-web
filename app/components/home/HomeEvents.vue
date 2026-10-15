@@ -2,9 +2,10 @@
 import events from "~/data/events.js";
 
 // El evento en vivo ocupa la tarjeta grande; si no hay ninguno, el primero.
+// El mosaico tiene 4 lugares.
 const ordered = computed(() => {
   const live = events.find((event) => event.live);
-  return live ? [live, ...events.filter((event) => event !== live)] : events;
+  return (live ? [live, ...events.filter((event) => event !== live)] : events).slice(0, 4);
 });
 
 // Directo de YouTube en la tarjeta grande (solo si el evento tiene stream).

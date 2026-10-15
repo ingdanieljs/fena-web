@@ -46,7 +46,7 @@ const points = [
                               </div>
                           </div>
                           <div class="about-two__img-2">
-                              <img src="/assets/images/img_bank/img_8.webp" alt="" width="1024" height="683">
+                              <img src="/assets/images/img_bank/img_33.webp" alt="" width="1024" height="683">
                           </div>
                       </div>
                   </div>

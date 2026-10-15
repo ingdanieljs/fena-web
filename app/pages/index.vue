@@ -8,6 +8,7 @@ useHead({ title: "" });
     <HomeFeatures />
     <HomeCounter />
     <HomeEvents />
+    <HomeTournaments />
     <HomeAbout />
     <HomeModalidades />
     <!-- Ocultas por ahora; los componentes siguen en app/components/home. -->

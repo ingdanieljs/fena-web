@@ -1,176 +1,59 @@
+<script setup>
+import events from "~/data/events.js";
+
+// Tarjetas con el estilo de noticias (.news-card) y filtros por modalidad
+// con el estilo de preguntas frecuentes (.faq-hub__filter).
+const disciplines = [...new Set(events.map((event) => event.discipline))];
+const discipline = ref("todas");
+const filtered = computed(() =>
+  discipline.value === "todas" ? events : events.filter((event) => event.discipline === discipline.value));
+</script>
+
 <template>
-  <section class="event-page">
-      <div class="container">
-          <div class="row">
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-1.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Campeonato Nacional
-                                  Interclubes — Natación · Nacional</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Guayaquil, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>14</p>
-                              <span>Mar</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-2.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Copa Pacífico Aguas
-                                  Abiertas 10K — Internacional</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Salinas, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>11</p>
-                              <span>Abr</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="300ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-3.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Selectivo Nacional de
-                                  Clavados — Selectivo</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Quito, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>16</p>
-                              <span>May</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="100ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-4.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Campeonato Nacional
-                                  Masters 50m — Nacional</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Cuenca, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>13</p>
-                              <span>Jun</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="200ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-5.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Liga Nacional de Polo
-                                  Acuático — Nacional</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Guayaquil, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>18</p>
-                              <span>Jul</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-              <!--Event Two Single Start -->
-              <div class="col-xl-4 col-lg-6 wow fadeInUp" data-wow-delay="300ms">
-                  <div class="events-two__single">
-                      <div class="events-two__img">
-                          <img src="/assets/images/resources/event-2-6.jpg" alt="">
-                      </div>
-                      <div class="events-two__content">
-                          <p class="events-two__time"> <span class="icon-clock"></span> 7:00 pm - 9:00 pm</p>
-                          <h3 class="events-two__title"><NuxtLink to="/eventos/detalle">Festival Fenita
-                                  Swimming Fest — Natación · Festival</NuxtLink></h3>
-                          <div class="events-two__location">
-                              <div class="events-two__location-icon">
-                                  <span class="fas fa-map-marker-alt"></span>
-                              </div>
-                              <p class="events-two__loation-text">Ambato, Ecuador · Próximo</p>
-                          </div>
-                          <div class="events-two__btn-box">
-                              <NuxtLink to="/eventos/detalle" class="thm-btn">Ver convocatoria<span
-                                      class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                          <div class="events-two__date">
-                              <p>15</p>
-                              <span>Ago</span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!--Event Two Single End -->
-          </div>
+  <section class="event-hub" aria-labelledby="event-hub-title">
+    <div class="container">
+      <div class="event-hub__head">
+        <div class="section-title text-left sec-title-animation animation-style2">
+          <h2 id="event-hub-title" class="section-title__title title-animation">Próximos <span>eventos</span></h2>
+        </div>
+        <div class="faq-hub__filters event-hub__filters" role="group" aria-label="Filtrar por modalidad">
+          <button
+            type="button" :class="['faq-hub__filter', { 'is-active': discipline === 'todas' }]"
+            :aria-pressed="discipline === 'todas'" @click="discipline = 'todas'">
+            Todas<span class="faq-hub__filter-count">{{ events.length }}</span>
+          </button>
+          <button
+            v-for="item in disciplines" :key="item" type="button"
+            :class="['faq-hub__filter', { 'is-active': discipline === item }]"
+            :aria-pressed="discipline === item" @click="discipline = item">
+            {{ item }}<span class="faq-hub__filter-count">{{ events.filter((event) => event.discipline === item).length }}</span>
+          </button>
+        </div>
       </div>
+      <ul class="home-news__list">
+        <li v-for="event in filtered" :key="event.slug">
+          <NuxtLink :to="`/eventos/${event.slug}`" class="news-card">
+            <div class="news-card__media">
+              <img
+                :src="event.image" alt="" width="1024" height="683" loading="lazy" class="news-card__img"
+                :style="event.position ? { objectPosition: event.position } : null">
+              <p class="news-card__date">
+                <span class="news-card__day">{{ event.day }}</span>
+                <span class="news-card__month">{{ event.month }}</span>
+              </p>
+              <span v-if="event.live" class="home-events__live home-events__live--corner">En vivo</span>
+            </div>
+            <div class="news-card__body">
+              <p class="news-card__category">{{ event.discipline }} · {{ event.category }}</p>
+              <h3 class="news-card__title">{{ event.title }}</h3>
+              <p class="event-hub__place">
+                <span class="fas fa-map-marker-alt" aria-hidden="true"></span>{{ event.city }}, Ecuador
+              </p>
+              <span class="news-card__more" aria-hidden="true">Ver evento<span class="far fa-chevron-right"></span></span>
+            </div>
+          </NuxtLink>
+        </li>
+      </ul>
+    </div>
   </section>
 </template>

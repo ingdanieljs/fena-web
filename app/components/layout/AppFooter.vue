@@ -64,7 +64,7 @@ const currentYear = new Date().getFullYear();
                     </li>
                   </ul>
                   <div class="footer-widget__social-box">
-                    <a v-for="social in socials" :key="social.name" :href="social.url" :aria-label="social.name">
+                    <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener" :aria-label="social.name">
                       <span :class="social.icon"></span>
                     </a>
                   </div>
@@ -109,7 +109,7 @@ const currentYear = new Date().getFullYear();
             <div class="site-footer__bottom-inner">
               <div class="site-footer__copyright">
                 <p class="site-footer__copyright-text">
-                  Copyright@ {{ currentYear }} <NuxtLink to="/">FENA.</NuxtLink> All Rights Reserved.
+                  © {{ currentYear }} <NuxtLink to="/">FENA</NuxtLink>. Todos los derechos reservados.
                 </p>
               </div>
               <div class="site-footer__bottom-menu-box">

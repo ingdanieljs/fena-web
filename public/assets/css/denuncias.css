@@ -4,7 +4,7 @@
 
 .dn-section {
   position: relative;
-  padding: 110px 0 110px;
+  padding: 90px 0;
 }
 
 .dn-section--alt {
@@ -17,11 +17,12 @@
 
 /* ---------- Aviso de demo / emergencia ---------- */
 .dn-notice {
+  position: relative;
   display: flex;
   gap: 16px;
   align-items: flex-start;
   padding: 18px 22px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid rgba(var(--eduvers-black-rgb), .12);
   background: #fff;
   font-size: 15px;
@@ -39,8 +40,8 @@
 }
 
 .dn-notice--alert {
-  border-color: rgba(236, 0, 0, .25);
-  background: rgba(236, 0, 0, .05);
+  border-color: rgba(228, 42, 45, .25);
+  background: rgba(228, 42, 45, .05);
 }
 
 .dn-notice--alert i {
@@ -48,7 +49,7 @@
 }
 
 .dn-notice--info {
-  background: rgba(3, 13, 64, .04);
+  background: rgba(11, 21, 66, .04);
 }
 
 /* ---------- Hero del canal ---------- */
@@ -81,15 +82,33 @@
 }
 
 .dn-action {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   gap: 22px;
   padding: 28px 30px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: var(--eduvers-black);
   color: #fff;
   transition: transform .3s ease, box-shadow .3s ease;
-  box-shadow: 0 18px 40px rgba(3, 13, 64, .18);
+  box-shadow: 0 18px 40px rgba(11, 21, 66, .18);
+}
+
+.dn-action::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background-color: var(--eduvers-base);
+  transition: width .4s ease;
+}
+
+.dn-action:hover::before,
+.dn-action:focus-visible::before {
+  width: 100%;
 }
 
 .dn-action:hover {
@@ -97,11 +116,15 @@
   color: #fff;
 }
 
+.dn-action:focus-visible {
+  outline: 3px solid var(--fena-accent);
+  outline-offset: 3px;
+}
+
 .dn-action--light {
   background: #fff;
   color: var(--eduvers-black);
-  border: 1px solid var(--eduvers-bdr-color);
-  box-shadow: 0 10px 30px rgba(3, 13, 64, .06);
+  box-shadow: 0 14px 34px rgba(11, 21, 66, .1);
 }
 
 .dn-action--light:hover {
@@ -109,22 +132,23 @@
 }
 
 .dn-action__icon {
-  flex: 0 0 64px;
-  height: 64px;
-  border-radius: 50%;
+  flex: 0 0 60px;
+  height: 60px;
+  border-radius: 8px;
   display: grid;
   place-items: center;
   font-size: 24px;
-  background: var(--eduvers-base);
-  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  color: var(--fena-accent);
 }
 
 .dn-action--light .dn-action__icon {
-  background: rgba(3, 13, 64, .07);
-  color: var(--eduvers-black);
+  background: var(--eduvers-black);
+  color: var(--fena-accent);
 }
 
 .dn-action h4 {
+  font-family: var(--eduvers-font-two);
   font-size: 21px;
   font-weight: 700;
   margin: 0 0 4px;
@@ -141,37 +165,67 @@
 
 .dn-action__arrow {
   margin-left: auto;
-  font-size: 18px;
+  font-size: 16px;
+  color: var(--fena-accent);
+  transition: transform .3s ease;
+}
+
+.dn-action--light .dn-action__arrow {
+  color: var(--eduvers-base);
+}
+
+.dn-action:hover .dn-action__arrow {
+  transform: translateX(4px);
 }
 
 /* ---------- Tarjetas de conductas ---------- */
 .dn-card {
+  position: relative;
+  overflow: hidden;
   height: 100%;
   padding: 34px 30px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: #fff;
-  border: 1px solid var(--eduvers-bdr-color);
-  transition: box-shadow .3s ease, transform .3s ease;
+  box-shadow: 0 14px 34px rgba(11, 21, 66, .08);
+  transition: box-shadow .4s ease, transform .4s ease;
+}
+
+.dn-card::before,
+.dn-steps__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 3px;
+  background-color: var(--eduvers-base);
+  transition: width .4s ease;
 }
 
 .dn-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 40px rgba(3, 13, 64, .08);
+  box-shadow: 0 18px 40px rgba(11, 21, 66, .14);
+}
+
+.dn-card:hover::before,
+.dn-steps__item:hover::after {
+  width: 100%;
 }
 
 .dn-card__icon {
   width: 58px;
   height: 58px;
-  border-radius: 12px;
+  border-radius: 8px;
   display: grid;
   place-items: center;
   font-size: 22px;
   margin-bottom: 22px;
-  color: var(--eduvers-base);
-  background: rgba(236, 0, 0, .08);
+  color: var(--fena-accent);
+  background: var(--eduvers-black);
 }
 
 .dn-card h4 {
+  font-family: var(--eduvers-font-two);
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -206,24 +260,25 @@
   display: flex;
   gap: 16px;
   padding: 22px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #fff;
-  border: 1px solid var(--eduvers-bdr-color);
+  box-shadow: 0 10px 28px rgba(11, 21, 66, .07);
 }
 
 .dn-rights li i {
   flex: 0 0 auto;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
   display: grid;
   place-items: center;
-  font-size: 14px;
-  color: #fff;
+  font-size: 17px;
+  color: var(--fena-accent);
   background: var(--eduvers-black);
 }
 
 .dn-rights h5 {
+  font-family: var(--eduvers-font-two);
   font-size: 17px;
   font-weight: 700;
   margin: 4px 0 6px;
@@ -245,10 +300,11 @@
 
 .dn-steps__item {
   position: relative;
+  overflow: hidden;
   padding: 30px 26px;
-  border-radius: 14px;
+  border-radius: 8px;
   background: #fff;
-  border: 1px solid var(--eduvers-bdr-color);
+  box-shadow: 0 14px 34px rgba(11, 21, 66, .08);
 }
 
 .dn-steps__item::before {
@@ -263,6 +319,7 @@
 }
 
 .dn-steps__item h4 {
+  font-family: var(--eduvers-font-two);
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
@@ -278,11 +335,11 @@
   display: inline-block;
   margin-top: 14px;
   padding: 4px 12px;
-  border-radius: 20px;
+  border-radius: 4px;
   font-size: 13px;
   font-weight: 600;
   color: var(--eduvers-black);
-  background: rgba(3, 13, 64, .06);
+  background: rgba(11, 21, 66, .06);
 }
 
 /* ---------- Marco normativo ---------- */
@@ -304,12 +361,18 @@
 }
 
 .dn-laws i {
-  font-size: 20px;
-  color: var(--eduvers-base);
-  margin-top: 4px;
+  flex: 0 0 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+  color: var(--fena-accent);
+  background: var(--eduvers-black);
 }
 
 .dn-laws h5 {
+  font-family: var(--eduvers-font-two);
   font-size: 17px;
   font-weight: 700;
   margin: 0 0 4px;
@@ -341,7 +404,7 @@
 .dn-progress li {
   position: relative;
   padding: 16px 18px 16px 62px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #fff;
   border: 1px solid var(--eduvers-bdr-color);
   font-size: 14px;
@@ -367,18 +430,18 @@
   display: grid;
   place-items: center;
   font-weight: 700;
-  background: rgba(3, 13, 64, .08);
+  background: rgba(11, 21, 66, .08);
   color: var(--eduvers-black);
 }
 
 .dn-progress li.is-active {
   border-color: var(--eduvers-black);
-  box-shadow: 0 10px 24px rgba(3, 13, 64, .08);
+  box-shadow: 0 10px 24px rgba(11, 21, 66, .08);
 }
 
 .dn-progress li.is-active::before {
-  background: var(--eduvers-base);
-  color: #fff;
+  background: var(--eduvers-black);
+  color: var(--fena-accent);
 }
 
 .dn-progress li.is-done::before {
@@ -388,11 +451,22 @@
 }
 
 .dn-panel {
+  position: relative;
+  overflow: hidden;
   padding: 40px;
-  border-radius: 16px;
+  border-radius: 8px;
   background: #fff;
-  border: 1px solid var(--eduvers-bdr-color);
-  box-shadow: 0 20px 50px rgba(3, 13, 64, .06);
+  box-shadow: 0 14px 34px rgba(11, 21, 66, .08);
+}
+
+.dn-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--eduvers-base);
 }
 
 .dn-step {
@@ -417,6 +491,7 @@
 }
 
 .dn-step__title {
+  font-family: var(--eduvers-font-two);
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 6px;
@@ -492,7 +567,7 @@
 .dn-select {
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23030D40' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%230B1542' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 20px center;
   padding-right: 44px;
@@ -557,7 +632,7 @@
   align-items: flex-start;
   margin: 0;
   padding: 16px 18px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid var(--eduvers-bdr-color);
   background: #fff;
   cursor: pointer;
@@ -568,7 +643,7 @@
 }
 
 .dn-option:hover {
-  border-color: rgba(3, 13, 64, .35);
+  border-color: rgba(11, 21, 66, .35);
 }
 
 .dn-option input {
@@ -588,13 +663,13 @@
 
 .dn-option:has(input:checked) {
   border-color: var(--eduvers-black);
-  background: rgba(3, 13, 64, .04);
+  background: rgba(11, 21, 66, .04);
 }
 
 .dn-option.is-locked {
   cursor: default;
-  background: rgba(236, 0, 0, .04);
-  border-color: rgba(236, 0, 0, .25);
+  background: rgba(228, 42, 45, .04);
+  border-color: rgba(228, 42, 45, .25);
 }
 
 .dn-measures {
@@ -613,8 +688,8 @@
 
 /* Bloque plegable "Agregar más detalles" */
 .dn-details {
-  border: 1px dashed rgba(3, 13, 64, .25);
-  border-radius: 12px;
+  border: 1px dashed rgba(11, 21, 66, .25);
+  border-radius: 8px;
   margin: 10px 0 30px;
 }
 
@@ -657,7 +732,7 @@
 .dn-file {
   display: block;
   padding: 26px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 2px dashed var(--eduvers-bdr-color);
   background: var(--eduvers-primary);
   text-align: center;
@@ -727,7 +802,7 @@
 /* Resumen previo al envío */
 .dn-summary {
   margin: 0 0 26px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--eduvers-primary);
   padding: 8px 24px;
 }
@@ -783,7 +858,7 @@
   gap: 14px;
   margin: 18px 0 8px;
   padding: 16px 26px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--eduvers-black);
   color: #fff;
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -870,10 +945,10 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border-radius: 30px;
+  border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
-  background: rgba(3, 13, 64, .08);
+  background: rgba(11, 21, 66, .08);
   color: var(--eduvers-black);
 }
 
@@ -904,7 +979,7 @@
 
 .dn-meta div {
   padding: 16px 18px;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--eduvers-primary);
   font-size: 14px;
 }
@@ -969,10 +1044,11 @@
   border-color: var(--eduvers-base);
   background: var(--eduvers-base);
   color: #fff;
-  box-shadow: 0 0 0 6px rgba(236, 0, 0, .12);
+  box-shadow: 0 0 0 6px rgba(228, 42, 45, .12);
 }
 
 .dn-timeline h5 {
+  font-family: var(--eduvers-font-two);
   font-size: 17px;
   font-weight: 700;
   margin: 2px 0 4px;
@@ -1070,5 +1146,27 @@
 
   .dn-action {
     padding: 22px;
+  }
+}
+
+/* Preguntas frecuentes del canal (acordeón .faq-hub sin número). */
+.dn-faq__answer {
+  padding-left: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dn-action,
+  .dn-action::before,
+  .dn-action__arrow,
+  .dn-card,
+  .dn-card::before,
+  .dn-steps__item::after {
+    transition: none;
+  }
+
+  .dn-action:hover,
+  .dn-card:hover,
+  .dn-action:hover .dn-action__arrow {
+    transform: none;
   }
 }

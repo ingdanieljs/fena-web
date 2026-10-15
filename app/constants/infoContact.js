@@ -14,6 +14,7 @@ const infoContact = {
     message: "Hola, quisiera información sobre la FENA",
   },
   city: "Guayaquil, Ecuador",
+  hours: "Lunes a viernes, 08:30 – 16:30",
   address:
     "Av. de las Américas, Plazoleta Olímpica, Edificio de Federaciones, Guayaquil",
   about:

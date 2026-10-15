@@ -12,7 +12,7 @@ const ui = useUiStore();
     <div class="xs-sidebar-widget">
       <div class="sidebar-widget-container">
         <div class="widget-heading">
-          <a href="#" class="close-side-widget" @click.prevent="ui.closeAll()">X</a>
+          <a href="#" class="close-side-widget" aria-label="Cerrar panel" @click.prevent="ui.closeAll()"><span class="far fa-times" aria-hidden="true"></span></a>
         </div>
         <div class="sidebar-textwidget">
           <div class="sidebar-info-contents">
@@ -39,13 +39,13 @@ const ui = useUiStore();
               <div class="sidebar-contact-info">
                 <h4>Información de contacto</h4>
                 <ul class="list-unstyled">
-                  <li><span class="far fa-map-marker-alt"></span> {{ infoContact.address }}</li>
+                  <li><span class="fas fa-map-marker-alt" aria-hidden="true"></span> {{ infoContact.address }}</li>
                   <li>
-                    <span class="far fa-phone"></span>
+                    <span class="fas fa-phone" aria-hidden="true"></span>
                     <a :href="infoContact.phone.url">{{ infoContact.phone.label }}</a>
                   </li>
                   <li>
-                    <span class="fal fa-envelope"></span>
+                    <span class="fas fa-envelope" aria-hidden="true"></span>
                     <a :href="infoContact.email.url">{{ infoContact.email.label }}</a>
                   </li>
                 </ul>
@@ -53,7 +53,7 @@ const ui = useUiStore();
               <div class="thm-social-link1">
                 <ul class="social-box list-unstyled">
                   <li v-for="social in socials" :key="social.name">
-                    <a :href="social.url" :aria-label="social.name"><i :class="social.icon"></i></a>
+                    <a :href="social.url" target="_blank" rel="noopener" :aria-label="social.name"><i :class="social.icon"></i></a>
                   </li>
                 </ul>
               </div>

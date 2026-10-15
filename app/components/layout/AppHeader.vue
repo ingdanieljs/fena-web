@@ -41,7 +41,7 @@ const p = (name) => `${prefix.value}__${name}`;
         <div :class="p('top-right')">
           <p :class="p('social-title')">Síguenos en:</p>
           <div :class="p('social')">
-            <a v-for="social in socials" :key="social.name" :href="social.url" :aria-label="social.name">
+            <a v-for="social in socials" :key="social.name" :href="social.url" target="_blank" rel="noopener" :aria-label="social.name">
               <i :class="social.icon"></i>
             </a>
           </div>

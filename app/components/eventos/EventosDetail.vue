@@ -1,198 +1,116 @@
+<script setup>
+import infoContact from "~/constants/infoContact.js";
+
+// Detalle de un evento (data/events.js). Con stream, arriba va el directo con
+// los controles propios de la home; sin stream, la foto.
+const props = defineProps({
+  event: { type: Object, required: true },
+});
+
+const detail = computed(() => props.event.detail ?? {});
+const mapSrc = computed(() =>
+  `https://www.google.com/maps?q=${encodeURIComponent(detail.value.mapQuery ?? `${props.event.city}, Ecuador`)}&output=embed`);
+
+const info = computed(() => [
+  detail.value.fee && { icon: "fas fa-ticket-alt", label: "Inscripción", value: detail.value.fee },
+  { icon: "fas fa-calendar-alt", label: "Fecha", value: props.event.date },
+  { icon: "fas fa-map-marker-alt", label: "Sede", value: `${props.event.city}, Ecuador` },
+  { icon: "fas fa-flag", label: "Categoría", value: `${props.event.discipline} · ${props.event.category}` },
+].filter(Boolean));
+
+const playerBox = ref(null);
+const { muted, paused, toggleSound, togglePlay } = useYouTubePlayer(playerBox, {
+  videoId: () => props.event.stream,
+  title: () => `Transmisión en vivo: ${props.event.title}`,
+});
+</script>
+
 <template>
-  <section class="event-details">
-      <div class="container">
-          <div class="event-details__top">
-              <div class="event-details__top-img">
-                  <img src="/assets/images/resources/event-details-top-img-1.jpg" alt="">
-              </div>
+  <section class="event-detail">
+    <div class="container">
+      <div :class="['event-detail__media', { 'event-detail__media--stream': event.stream }]">
+        <div v-if="event.stream" class="home-events__player event-detail__player">
+          <div ref="playerBox" class="home-events__player-frame"></div>
+          <div class="home-events__player-controls">
+            <button
+              type="button" class="home-events__player-btn"
+              :aria-label="paused ? 'Reanudar transmisión' : 'Pausar transmisión'" @click="togglePlay">
+              <span :class="['fas', paused ? 'fa-play' : 'fa-pause']" aria-hidden="true"></span>
+            </button>
+            <button
+              type="button" class="home-events__player-btn"
+              :aria-label="muted ? 'Activar sonido' : 'Silenciar'" @click="toggleSound">
+              <span :class="['fas', muted ? 'fa-volume-mute' : 'fa-volume-up']" aria-hidden="true"></span>
+            </button>
           </div>
-          <div class="event-details__content-box">
-              <div class="row">
-                  <div class="col-xl-8 col-lg-7">
-                      <div class="event-details__content-left">
-                          <h3 class="event-details__content-title">Sobre el evento</h3>
-                          <p class="event-details__content-text-1">La Copa Pacífico Aguas Abiertas 10K reúne en
-                              Salinas a nadadores nacionales e internacionales en una competencia avalada por
-                              FENA. Un escenario de alto nivel para el desarrollo de la natación en aguas
-                              abiertas, la competencia justa y la representación del Ecuador.</p>
-                          <ul class="list-unstyled event-details__point">
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Modalidad:</h4>
-                                      <p>Competencia de aguas abiertas sobre la distancia de 10 km en el
-                                          Pacífico, con categorías y relevos avalados por FENA y desarrollados
-                                          bajo normativa de World Aquatics.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Recorrido y seguridad:</h4>
-                                      <p>Circuito balizado frente a la playa de Salinas, con embarcaciones de
-                                          apoyo, equipo de rescate y control técnico para garantizar la
-                                          seguridad de cada deportista.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Participación internacional:</h4>
-                                      <p>Espacio de encuentro para nadadores del Ecuador y delegaciones
-                                          invitadas, que impulsa la competencia justa y la representación
-                                          internacional del país.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Inscripciones:</h4>
-                                      <p>El registro se realiza a través de los clubes afiliados y requiere la
-                                          Licencia FENA 2026 vigente. Consulta la convocatoria oficial para
-                                          fechas y requisitos.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Premiación y resultados:</h4>
-                                      <p>Reconocimiento por categoría y publicación de resultados oficiales en
-                                          los canales de FENA, con registro de marcas para rankings y récords
-                                          nacionales.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="icon">
-                                      <span class="far fa-angle-double-right"></span>
-                                  </div>
-                                  <div class="content">
-                                      <h4>Organización:</h4>
-                                      <p>Evento organizado por FENA junto a la federación provincial sede,
-                                          con jueces y oficiales certificados que velan por el desarrollo
-                                          técnico de la disciplina.</p>
-                                  </div>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-5">
-                      <div class="event-details__sidebar">
-                          <h3 class="event-details__sidebar-title">Información del evento</h3>
-                          <ul class="list-unstyled event-details__list">
-                              <li>
-                                  <div class="event-details__list-left">
-                                      <div class="event-details__list-icon">
-                                          <span class="far fa-dollar-sign"></span>
-                                      </div>
-                                      <p class="event-details__list-text">Inscripción:</p>
-                                  </div>
-                                  <div class="event-details__list-right">
-                                      <h2>$40.00</h2>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__list-left">
-                                      <div class="event-details__list-icon">
-                                          <span class="fas fa-calendar-alt"></span>
-                                      </div>
-                                      <p class="event-details__list-text">Fecha:</p>
-                                  </div>
-                                  <div class="event-details__list-right">
-                                      <p>11 de abril, 2026</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__list-left">
-                                      <div class="event-details__list-icon">
-                                          <span class="far fa-user-hard-hat"></span>
-                                      </div>
-                                      <p class="event-details__list-text">Cupos totales:</p>
-                                  </div>
-                                  <div class="event-details__list-right">
-                                      <p>22</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__list-left">
-                                      <div class="event-details__list-icon">
-                                          <span class="fas fa-book"></span>
-                                      </div>
-                                      <p class="event-details__list-text">Cupos ocupados:</p>
-                                  </div>
-                                  <div class="event-details__list-right">
-                                      <p>0</p>
-                                  </div>
-                              </li>
-                          </ul>
-                          <div class="event-details__btn-box">
-                              <NuxtLink to="/contacto" class="thm-btn">Inscribirme
-                                  <span class="far fa-chevron-right"></span></NuxtLink>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="event-details__location-box">
-              <h3 class="event-details__location-title">Ubicación del evento</h3>
-              <div class="row">
-                  <div class="col-xl-8 col-lg-7">
-                      <div class="event-details__location-map">
-                          <iframe
-                              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
-                              class="event-details__location-map-box" allowfullscreen></iframe>
-                      </div>
-                  </div>
-                  <div class="col-xl-4 col-lg-5">
-                      <div class="event-details__location-venue">
-                          <h4 class="event-details__location-venue-title">Sede del evento</h4>
-                          <ul class=" list-unstyled event-details__location-venue-list">
-                              <li>
-                                  <div class="event-details__location-venue-left">
-                                      <p>Sede</p>
-                                  </div>
-                                  <div class="event-details__location-venue-right">
-                                      <p>Salinas, Ecuador.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__location-venue-left">
-                                      <p>Ubicación</p>
-                                  </div>
-                                  <div class="event-details__location-venue-right">
-                                      <p>Malecón de Salinas.</p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__location-venue-left">
-                                      <p>Teléfono</p>
-                                  </div>
-                                  <div class="event-details__location-venue-right">
-                                      <p><a href="tel:+59342295804">(593) 04-2295804</a></p>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="event-details__location-venue-left">
-                                      <p>Sitio web</p>
-                                  </div>
-                                  <div class="event-details__location-venue-right">
-                                      <p><a href="#">www.fena-ecuador.org</a></p>
-                                  </div>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+        </div>
+        <img
+          v-else :src="event.image" alt="" width="1024" height="683" class="event-detail__img"
+          :style="event.position ? { objectPosition: event.position } : null">
+        <p class="news-card__date event-detail__date">
+          <span class="news-card__day">{{ event.day }}</span>
+          <span class="news-card__month">{{ event.month }}</span>
+        </p>
+        <span v-if="event.live" class="home-events__live home-events__live--corner">En vivo</span>
       </div>
+
+      <div class="row">
+        <div class="col-xl-8 col-lg-7">
+          <p class="news-card__category">{{ event.discipline }} · {{ event.category }}</p>
+          <h2 class="event-detail__title">{{ event.title }}</h2>
+          <p v-if="detail.description" class="event-detail__text">{{ detail.description }}</p>
+          <ul v-if="detail.points" class="event-detail__points">
+            <li v-for="point in detail.points" :key="point.title">
+              <span class="about-two__points-icon">
+                <span :class="point.icon" aria-hidden="true"></span>
+              </span>
+              <div>
+                <h3 class="event-detail__point-title">{{ point.title }}</h3>
+                <p class="event-detail__point-text">{{ point.text }}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <aside class="faq-hub__help event-detail__info">
+            <h3 class="faq-hub__help-title">Información del evento</h3>
+            <ul class="event-detail__info-list">
+              <li v-for="item in info" :key="item.label">
+                <span class="event-detail__info-icon"><span :class="item.icon" aria-hidden="true"></span></span>
+                <div>
+                  <p class="event-detail__info-label">{{ item.label }}</p>
+                  <p class="event-detail__info-value">{{ item.value }}</p>
+                </div>
+              </li>
+            </ul>
+            <NuxtLink to="/contacto" class="thm-btn">Inscribirme<span class="far fa-chevron-right"></span></NuxtLink>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-location" aria-labelledby="event-location-title">
+    <div class="container">
+      <h2 id="event-location-title" class="event-location__title">Ubicación del evento</h2>
+      <div class="row">
+        <div class="col-xl-8 col-lg-7">
+          <iframe
+            :src="mapSrc" class="event-location__map" :title="`Mapa de ${event.city}`" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="col-xl-4 col-lg-5">
+          <div class="event-location__venue">
+            <h3 class="event-location__venue-title">Sede del evento</h3>
+            <ul class="event-location__list">
+              <li><span>Ciudad</span><strong>{{ event.city }}, Ecuador</strong></li>
+              <li v-if="detail.venue"><span>Ubicación</span><strong>{{ detail.venue }}</strong></li>
+              <li><span>Teléfono</span><a :href="infoContact.phone.url">{{ infoContact.phone.label }}</a></li>
+              <li><span>Correo</span><a :href="infoContact.email.url">{{ infoContact.email.label }}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>

@@ -28,8 +28,10 @@ const testimonials = [
   <section id="testimonial" class="testimonial-two">
       <div class="container">
           <div class="section-title text-left sec-title-animation animation-style2">
-              <h2 class="section-title__title title-animation">Construyendo una comunidad
-                  <br>en torno a la <span>natación</span>.
+              <h2 class="section-title__title title-animation">
+                  <!-- Título cambiable: Institución lo usa como "La voz de nuestros clubes". -->
+                  <slot name="title">Construyendo una comunidad
+                      <br>en torno a la <span>natación</span>.</slot>
               </h2>
           </div>
           <div class="testimonial-two__inner">

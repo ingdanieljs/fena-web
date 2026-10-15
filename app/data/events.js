@@ -1,4 +1,8 @@
-
+// Eventos de la home (/), el listado (/eventos) y el detalle (/eventos/[slug]).
+// live: true marca el evento en vivo (va en la tarjeta grande de la home);
+// stream: ID del video de YouTube de la transmisión.
+// position: encuadre de la foto en las tarjetas (object-position).
+// detail: contenido del detalle (textos de demostración, reemplazar por los oficiales).
 const events = [
   {
     slug: "campeonato-nacional-interclubes",
@@ -7,6 +11,24 @@ const events = [
     image: "/assets/images/img_bank/img_1.webp",
     day: "10",
     month: "Mar",
+    date: "10 de marzo, 2026",
+    city: "Guayaquil",
+    category: "Nacional",
+    discipline: "Natación",
+    detail: {
+      description: "El Campeonato Nacional Interclubes abre la temporada de piscina reuniendo a los clubes afiliados de todo el país. Es la primera gran cita del calendario para medir el nivel de los deportistas, sumar puntos por club y registrar marcas oficiales para los rankings nacionales.",
+      fee: "$35.00",
+      venue: "Piscina olímpica de Guayaquil",
+      mapQuery: "Piscina olímpica, Guayaquil, Ecuador",
+      points: [
+        { icon: "fas fa-swimmer", title: "Pruebas", text: "Programa completo de piscina larga en estilo libre, espalda, pecho, mariposa y combinado, con pruebas individuales y relevos por categoría." },
+        { icon: "fas fa-users", title: "Clubes participantes", text: "Competencia abierta a todos los clubes afiliados a FENA, con puntuación por equipo para definir al campeón nacional interclubes." },
+        { icon: "fas fa-clipboard-list", title: "Inscripciones", text: "Se realizan a través de cada club, con deportistas que cuenten con la Licencia FENA 2026 vigente y dentro del plazo de la convocatoria." },
+        { icon: "fas fa-stopwatch", title: "Cronometraje oficial", text: "Cronometraje electrónico y jueces certificados; las marcas obtenidas son válidas para rankings y récords nacionales." },
+        { icon: "fas fa-medal", title: "Premiación", text: "Medallas para los tres primeros lugares de cada prueba y categoría, y trofeo para los clubes con mayor puntaje." },
+        { icon: "fas fa-file-alt", title: "Resultados", text: "Los resultados oficiales se publican en los canales de FENA al cierre de cada jornada." },
+      ],
+    },
   },
   {
     slug: "copa-pacifico-aguas-abiertas-10k",
@@ -15,8 +37,26 @@ const events = [
     image: "/assets/images/img_bank/img_6.webp",
     day: "12",
     month: "Abr",
+    date: "12 de abril, 2026",
+    city: "Salinas",
+    category: "Internacional",
+    discipline: "Aguas Abiertas",
     live: true,
     stream: "UmIYanq5gH8",
+    detail: {
+      description: "La Copa Pacífico Aguas Abiertas 10K reúne en Salinas a nadadores nacionales e internacionales en una competencia avalada por FENA. Un escenario de alto nivel para el desarrollo de la natación en aguas abiertas, la competencia justa y la representación del Ecuador.",
+      fee: "$40.00",
+      venue: "Malecón de Salinas",
+      mapQuery: "Malecón de Salinas, Ecuador",
+      points: [
+        { icon: "fas fa-swimmer", title: "Modalidad", text: "Competencia de aguas abiertas sobre la distancia de 10 km en el Pacífico, con categorías y relevos avalados por FENA y desarrollados bajo normativa de World Aquatics." },
+        { icon: "fas fa-life-ring", title: "Recorrido y seguridad", text: "Circuito balizado frente a la playa de Salinas, con embarcaciones de apoyo, equipo de rescate y control técnico para garantizar la seguridad de cada deportista." },
+        { icon: "fas fa-globe-americas", title: "Participación internacional", text: "Espacio de encuentro para nadadores del Ecuador y delegaciones invitadas, que impulsa la competencia justa y la representación internacional del país." },
+        { icon: "fas fa-clipboard-list", title: "Inscripciones", text: "El registro se realiza a través de los clubes afiliados y requiere la Licencia FENA 2026 vigente. Consulta la convocatoria oficial para fechas y requisitos." },
+        { icon: "fas fa-medal", title: "Premiación y resultados", text: "Reconocimiento por categoría y publicación de resultados oficiales en los canales de FENA, con registro de marcas para rankings y récords nacionales." },
+        { icon: "fas fa-users", title: "Organización", text: "Evento organizado por FENA junto a la federación provincial sede, con jueces y oficiales certificados que velan por el desarrollo técnico de la disciplina." },
+      ],
+    },
   },
   {
     slug: "selectivo-nacional-de-clavados",
@@ -25,6 +65,22 @@ const events = [
     image: "/assets/images/img_bank/img_2.webp",
     day: "08",
     month: "May",
+    date: "8 de mayo, 2026",
+    city: "Quito",
+    category: "Selectivo",
+    discipline: "Clavados",
+    detail: {
+      description: "El Selectivo Nacional de Clavados define a los deportistas que representarán al Ecuador en los próximos compromisos internacionales. Los clavadistas compiten en trampolín y plataforma bajo la evaluación de un panel de jueces certificados.",
+      fee: "$30.00",
+      venue: "Complejo acuático de Quito",
+      mapQuery: "Complejo acuático, Quito, Ecuador",
+      points: [
+        { icon: "fas fa-swimming-pool", title: "Pruebas", text: "Competencias de trampolín de 1 m y 3 m y plataforma, en categorías juveniles y absolutas, individuales y sincronizados." },
+        { icon: "fas fa-user-check", title: "Panel de jueces", text: "Calificación a cargo de jueces certificados según el reglamento de World Aquatics, con dificultad y ejecución por clavado." },
+        { icon: "fas fa-flag", title: "Clasificación", text: "Los mejores puntajes integran la preselección nacional para los eventos internacionales de la temporada." },
+        { icon: "fas fa-clipboard-list", title: "Requisitos", text: "Licencia FENA 2026 vigente, inscripción a través del club y cumplimiento de las marcas base publicadas en la convocatoria." },
+      ],
+    },
   },
   {
     slug: "campeonato-nacional-masters-50m",
@@ -33,6 +89,72 @@ const events = [
     image: "/assets/images/img_bank/img_10.webp",
     day: "20",
     month: "Jun",
+    date: "20 de junio, 2026",
+    city: "Cuenca",
+    category: "Nacional",
+    discipline: "Masters",
+    detail: {
+      description: "El Campeonato Nacional Masters 50m reúne a nadadores desde los 25 años en una competencia que celebra la natación a lo largo de la vida. Una cita para competir por grupos de edad, mantener la actividad deportiva y registrar marcas nacionales máster.",
+      fee: "$25.00",
+      venue: "Piscina olímpica de Cuenca",
+      mapQuery: "Piscina olímpica, Cuenca, Ecuador",
+      points: [
+        { icon: "fas fa-swimmer", title: "Pruebas", text: "Pruebas individuales en los cuatro estilos y combinado, más relevos mixtos, en piscina de 50 metros." },
+        { icon: "fas fa-users", title: "Grupos de edad", text: "Competencia por grupos de cinco años desde los 25 años, con premiación independiente en cada grupo." },
+        { icon: "fas fa-id-card", title: "Licencia Máster", text: "Los participantes deben contar con la Licencia Máster vigente, inscritos a través de su club." },
+        { icon: "fas fa-stopwatch", title: "Récords máster", text: "Las marcas obtenidas se registran para los rankings y récords nacionales de la categoría Masters." },
+      ],
+    },
+  },
+  {
+    slug: "liga-nacional-de-polo-acuatico",
+    title: "Liga Nacional de Polo Acuático",
+    summary: "Guayaquil · Jul 2026 · Nacional",
+    image: "/assets/images/img_bank/img_44.webp",
+    position: "center 30%",
+    day: "18",
+    month: "Jul",
+    date: "18 de julio, 2026",
+    city: "Guayaquil",
+    category: "Nacional",
+    discipline: "Polo Acuático",
+    detail: {
+      description: "La Liga Nacional de Polo Acuático enfrenta a los mejores equipos del país en un formato de partidos por fechas. Es la competencia de referencia para el desarrollo del polo acuático ecuatoriano y la conformación de las selecciones nacionales.",
+      fee: "$120.00 por equipo",
+      venue: "Piscina olímpica de Guayaquil",
+      mapQuery: "Piscina olímpica, Guayaquil, Ecuador",
+      points: [
+        { icon: "fas fa-volleyball-ball", title: "Formato", text: "Fase de grupos y eliminación directa en ramas masculina y femenina, con partidos de cuatro cuartos." },
+        { icon: "fas fa-users", title: "Equipos", text: "Abierta a los clubes afiliados con plantillas inscritas y deportistas con licencia vigente." },
+        { icon: "fas fa-gavel", title: "Arbitraje", text: "Partidos dirigidos por árbitros certificados bajo el reglamento de World Aquatics." },
+        { icon: "fas fa-trophy", title: "Premiación", text: "Trofeo para los equipos campeones y reconocimiento al goleador y al mejor arquero del torneo." },
+      ],
+    },
+  },
+  {
+    slug: "festival-fenita-swimming-fest",
+    title: "Festival Fenita Swimming Fest",
+    summary: "Ambato · Ago 2026 · Festival",
+    image: "/assets/images/img_bank/img_45.webp",
+    position: "center 30%",
+    day: "15",
+    month: "Ago",
+    date: "15 de agosto, 2026",
+    city: "Ambato",
+    category: "Festival",
+    discipline: "Natación",
+    detail: {
+      description: "El Festival Fenita Swimming Fest es una jornada de natación formativa para niños y niñas que dan sus primeros pasos en la competencia. Un espacio para disfrutar del agua, aprender a competir y fomentar la masificación de la natación en el país.",
+      fee: "$15.00",
+      venue: "Piscina municipal de Ambato",
+      mapQuery: "Piscina municipal, Ambato, Ecuador",
+      points: [
+        { icon: "fas fa-child", title: "Participantes", text: "Niños y niñas de hasta 12 años, de clubes, escuelas de natación y centros de formación." },
+        { icon: "fas fa-swimmer", title: "Pruebas formativas", text: "Pruebas cortas de 25 y 50 metros en los cuatro estilos, adaptadas a cada grupo de edad." },
+        { icon: "fas fa-smile", title: "Enfoque", text: "Festival sin presión competitiva, centrado en la diversión, el aprendizaje y el juego limpio." },
+        { icon: "fas fa-medal", title: "Reconocimiento", text: "Medalla de participación para todos los deportistas y diplomas por categoría." },
+      ],
+    },
   },
 ];
 

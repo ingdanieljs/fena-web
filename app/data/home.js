@@ -36,3 +36,13 @@ export const partners = [
   { name: "Panam Aquatics", image: "/assets/images/patners/panam-aquatics.webp", width: 143, height: 44 },
   { name: "World Aquatics", image: "/assets/images/patners/world-aquatics.webp", width: 161, height: 40 },
 ];
+
+// Logos de los torneos de FENA a color, en public/assets/images/torneos.
+// Mismo criterio de tamaños que partners. En Clausura el "TORNEO" blanco se
+// pasó a azul marino para que se lea sobre el fondo blanco.
+export const tournaments = [
+  { name: "Torneo Clausura", image: "/assets/images/torneos/torneo-clausura.webp", width: 132, height: 53 },
+  { name: "Liga de Nadadores Masters 2026", image: "/assets/images/torneos/liga-nadadores-masters.webp", width: 81, height: 86 },
+  { name: "Fenita Swimming Fest", image: "/assets/images/torneos/fenita-swimming-fest.webp", width: 92, height: 76 },
+  { name: "Circuito Futuras Promesas", image: "/assets/images/torneos/circuito-futuras-promesas.webp", width: 97, height: 73 },
+];

@@ -7,7 +7,9 @@ defineProps({
 <template>
   <NuxtLink :to="`/noticias/${post.slug}`" class="news-card">
     <div class="news-card__media">
-      <img :src="post.image" alt="" width="1024" height="683" loading="lazy" class="news-card__img">
+      <img
+        :src="post.image" alt="" width="1024" height="683" loading="lazy" class="news-card__img"
+        :style="post.position ? { objectPosition: post.position } : null">
       <p class="news-card__date">
         <span class="news-card__day">{{ post.day }}</span>
         <span class="news-card__month">{{ post.month }}</span>

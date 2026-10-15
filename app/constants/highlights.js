@@ -1,18 +1,19 @@
 // Bloques de la sección CTA (CtaHighlights) por grupo de páginas.
+// icon: clase de Font Awesome acorde al título.
 
 export const institucion = [
   {
-    icon: "icon-user",
+    icon: "fas fa-users",
     title: "Masificación",
     text: "Llevamos la natación a todo el país"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-medal",
     title: "Alto rendimiento",
     text: "Formamos atletas de nivel internacional"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-file-check",
     title: "Transparencia",
     text: "Procesos claros y documentación en regla"
   }
@@ -20,17 +21,17 @@ export const institucion = [
 
 export const federacion = [
   {
-    icon: "icon-user",
+    icon: "fas fa-user-shield",
     title: "Protección al deportista",
     text: "Velamos por el bienestar de los atletas"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-balance-scale",
     title: "Competencia justa",
     text: "Promovemos el juego limpio y la transparencia"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-chart-line",
     title: "Desarrollo técnico",
     text: "Impulsamos la formación y el alto rendimiento"
   }
@@ -38,17 +39,17 @@ export const federacion = [
 
 export const eventos = [
   {
-    icon: "icon-user",
+    icon: "fas fa-balance-scale",
     title: "Competencia justa",
     text: "Reglas claras y juego limpio"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-chart-line",
     title: "Desarrollo técnico",
     text: "Formación deportiva de calidad"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-file-check",
     title: "Transparencia",
     text: "Información oficial siempre disponible"
   }
@@ -56,17 +57,17 @@ export const eventos = [
 
 export const faq = [
   {
-    icon: "icon-user",
+    icon: "fas fa-laptop",
     title: "Trámite en línea",
     text: "Gestiona tu licencia en cualquier momento"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-tags",
     title: "Tarifas claras",
     text: "Valores oficiales y accesibles por modalidad"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-shield-check",
     title: "Documentación",
     text: "Tus registros se guardan de forma segura"
   }
@@ -74,17 +75,17 @@ export const faq = [
 
 export const privacidad = [
   {
-    icon: "icon-user",
+    icon: "fas fa-id-card",
     title: "Afiliación",
     text: "Inscribe y afilia tu club fácilmente"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-trophy",
     title: "Competencias",
     text: "Eventos y campeonatos oficiales"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-shield-check",
     title: "Documentación",
     text: "Tus datos se almacenan de forma segura"
   }
@@ -92,17 +93,17 @@ export const privacidad = [
 
 export const modalidades = [
   {
-    icon: "icon-user",
+    icon: "fas fa-balance-scale",
     title: "Competencia justa",
     text: "Reglas claras y juego limpio en cada evento"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-chart-line",
     title: "Desarrollo técnico",
     text: "Formación deportiva de alto nivel"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-file-check",
     title: "Transparencia",
     text: "Convocatorias y resultados oficiales"
   }
@@ -110,17 +111,17 @@ export const modalidades = [
 
 export const noticias = [
   {
-    icon: "icon-user",
+    icon: "fas fa-user-shield",
     title: "Protección al deportista",
     text: "Velamos por el bienestar de cada atleta"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-balance-scale",
     title: "Competencia justa",
     text: "Promovemos el juego limpio en cada evento"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-chart-line",
     title: "Desarrollo técnico",
     text: "Impulsamos la formación de atletas y entrenadores"
   }
@@ -128,17 +129,17 @@ export const noticias = [
 
 export const documentos = [
   {
-    icon: "icon-user",
+    icon: "fas fa-laptop",
     title: "Trámites en línea",
     text: "Gestiona tus licencias cuando lo necesites"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-tags",
     title: "Tarifas oficiales",
     text: "Valores claros y accesibles para todos"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-shield-check",
     title: "Documentación segura",
     text: "Tus datos se almacenan de forma segura"
   }
@@ -146,17 +147,17 @@ export const documentos = [
 
 export const documentoDetalle = [
   {
-    icon: "icon-user",
+    icon: "fas fa-laptop",
     title: "Trámite en línea",
     text: "Gestiona tu licencia cuando quieras"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-tags",
     title: "Tarifas oficiales",
     text: "Valores accesibles y transparentes"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-shield-check",
     title: "Documentación",
     text: "Tus datos se guardan de forma segura"
   }
@@ -164,17 +165,17 @@ export const documentoDetalle = [
 
 export const contacto = [
   {
-    icon: "icon-user",
+    icon: "fas fa-headset",
     title: "Atención cercana",
     text: "Te atendemos de lunes a viernes"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-clock",
     title: "Horario de oficina",
     text: "Lunes a viernes: 08:30 – 16:30"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-envelope-open-text",
     title: "Trámites y denuncias",
     text: "comentariosydenuncias@fena-ecuador.org"
   }
@@ -182,17 +183,17 @@ export const contacto = [
 
 export const general = [
   {
-    icon: "icon-user",
+    icon: "fas fa-globe",
     title: "Acceso en línea",
     text: "Gestiona tus trámites cuando quieras"
   },
   {
-    icon: "icon-award",
+    icon: "fas fa-bolt",
     title: "Trámites ágiles",
     text: "Licencias e inscripciones más sencillas"
   },
   {
-    icon: "icon-script",
+    icon: "fas fa-shield-check",
     title: "Documentación segura",
     text: "Tu información se guarda con seguridad"
   }

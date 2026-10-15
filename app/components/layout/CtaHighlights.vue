@@ -3,6 +3,7 @@
 // Los textos por grupo de páginas están en constants/highlights.js.
 defineProps({
   items: { type: Array, required: true },
+  image: { type: String, default: "/assets/images/img_bank/img_1.webp" },
 });
 </script>
 
@@ -10,20 +11,18 @@ defineProps({
   <section class="cta-one">
     <div class="container">
       <div class="cta-one__inner">
-        <div class="cta-one__bg" style="background-image: url(/assets/images/backgrounds/cta-one-bg.jpg)"></div>
-        <div class="row">
-          <div v-for="item in items" :key="item.title" class="col-xl-4 col-lg-4">
-            <div class="cta-one__single">
-              <div class="cta-one__icon">
-                <span :class="item.icon"></span>
-              </div>
-              <div class="cta-one__content">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.text }}</p>
-              </div>
+        <div class="cta-one__bg" :style="{ backgroundImage: `url(${image})` }"></div>
+        <ul class="cta-one__list">
+          <li v-for="item in items" :key="item.title" class="cta-one__single">
+            <div class="cta-one__icon">
+              <span :class="item.icon" aria-hidden="true"></span>
             </div>
-          </div>
-        </div>
+            <div class="cta-one__content">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.text }}</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
