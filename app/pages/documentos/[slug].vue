@@ -4,7 +4,7 @@ import { documentoDetalle as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Detalle de Documento" />
+    <PageHeader image="/assets/images/img_bank/img_27.webp" image-position="center 40%" title="Detalle de Documento" />
     <DocumentosDetail />
     <DocumentosDescription />
     <DocumentosRelated />

@@ -4,7 +4,7 @@ import { eventos as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Testimonios" />
+    <PageHeader image="/assets/images/img_bank/img_38.webp" image-position="center 40%" title="Testimonios" />
     <TestimoniosList />
     <CtaHighlights :items="highlights" />
   </div>

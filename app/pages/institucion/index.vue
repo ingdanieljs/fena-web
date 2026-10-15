@@ -4,7 +4,7 @@ import { institucion as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Institución" />
+    <PageHeader image="/assets/images/img_bank/img_44.webp" image-position="center 25%" title="Institución" />
     <InstitucionFeatures />
     <InstitucionAbout />
     <InstitucionAthletes />

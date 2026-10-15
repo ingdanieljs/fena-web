@@ -17,6 +17,6 @@ useHead({ title: "" });
     <HomeTestimonials />
     <HomeFederations />
     <HomeNews />
-    <HomeNewsletter />
+    <!-- <HomeNewsletter /> -->
   </div>
 </template>

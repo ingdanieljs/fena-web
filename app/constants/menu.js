@@ -6,7 +6,6 @@ const menuItems = [
     children: [
       { label: "Atletas", to: "/atletas" },
       { label: "Perfil de Atleta", to: "/atletas/perfil" },
-      { label: "Afíliate", to: "/afiliacion" },
       { label: "Testimonios", to: "/testimonios" },
       { label: "Licencias FENA", to: "/licencias" },
       { label: "Preguntas Frecuentes", to: "/preguntas-frecuentes" },

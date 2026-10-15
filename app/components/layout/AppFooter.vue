@@ -4,17 +4,23 @@ import infoContact from "~/constants/infoContact.js";
 import { footerBottomLinks, footerLinks } from "~/constants/menu.js";
 import socials from "~/constants/socials.js";
 
+// variant "home": sin la franja .cta-one de las páginas interiores encima,
+// así que el footer no se monta sobre la sección anterior (ver main.css).
+const props = defineProps({
+  variant: { type: String, default: "page" },
+});
+
 const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-  <footer class="site-footer">
+  <footer :class="['site-footer', { 'site-footer--home': props.variant === 'home' }]">
     <div class="site-footer__map" style="background-image: url(/assets/images/shapes/footer-one-map.png)"></div>
     <div class="site-footer__top">
       <div class="container">
         <div class="site-footer__top-inner">
           <div class="row">
-            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
               <div class="footer-widget__about">
                 <div class="footer-widget__about-logo">
                   <NuxtLink to="/"><img :src="brand.logoWhite" :alt="brand.name"></NuxtLink>
@@ -26,7 +32,7 @@ const currentYear = new Date().getFullYear();
                 </ul>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
               <div class="footer-widget__links">
                 <h4 class="footer-widget__title">Enlaces rápidos</h4>
                 <ul class="footer-widget__links-list list-unstyled">
@@ -36,7 +42,7 @@ const currentYear = new Date().getFullYear();
                 </ul>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
               <div class="footer-widget__contact-info">
                 <h4 class="footer-widget__title">Contacto</h4>
                 <div class="footer-widget__contact-info-box">
@@ -65,6 +71,7 @@ const currentYear = new Date().getFullYear();
                 </div>
               </div>
             </div>
+            <!-- Suscripción al boletín: oculta por ahora (con ella las columnas eran col-xl-3).
             <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
               <div class="site-footer__newsletter">
                 <div class="footer-widget__title-box">
@@ -90,6 +97,7 @@ const currentYear = new Date().getFullYear();
                 </form>
               </div>
             </div>
+            -->
           </div>
         </div>
       </div>

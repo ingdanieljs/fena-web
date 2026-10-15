@@ -4,7 +4,7 @@ import { federacion as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Afíliate a FENA" />
+    <PageHeader image="/assets/images/img_bank/img_43.webp" title="Afíliate a FENA" />
     <AfiliacionForm />
     <CtaHighlights :items="highlights" />
   </div>

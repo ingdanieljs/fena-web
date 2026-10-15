@@ -7,6 +7,12 @@ const infoContact = {
     label: "(593) 04-2295804",
     url: "tel:+59342295804",
   },
+  // Botón flotante de WhatsApp. number va en formato internacional sin "+"
+  // ni espacios (ej. 593991234567). PENDIENTE: número oficial de FENA.
+  whatsapp: {
+    number: "",
+    message: "Hola, quisiera información sobre la FENA",
+  },
   city: "Guayaquil, Ecuador",
   address:
     "Av. de las Américas, Plazoleta Olímpica, Edificio de Federaciones, Guayaquil",

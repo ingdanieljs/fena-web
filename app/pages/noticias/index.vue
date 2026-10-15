@@ -4,7 +4,7 @@ import { noticias as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Noticias" />
+    <PageHeader image="/assets/images/img_bank/img_23.webp" image-position="center 30%" title="Noticias" />
     <NoticiasGrid />
     <CtaHighlights :items="highlights" />
   </div>

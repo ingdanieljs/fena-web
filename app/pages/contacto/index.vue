@@ -4,7 +4,7 @@ import { contacto as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Contacto" />
+    <PageHeader image="/assets/images/img_bank/img_42.webp" title="Contacto" />
     <ContactoInfo />
     <ContactoForm />
     <CtaHighlights :items="highlights" />

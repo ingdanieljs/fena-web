@@ -4,7 +4,7 @@ import { eventos as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Licencias FENA 2026" />
+    <PageHeader image="/assets/images/img_bank/img_37.webp" title="Licencias FENA 2026" />
     <LicenciasPricing />
     <CtaHighlights :items="highlights" />
   </div>

@@ -17,11 +17,11 @@ watch(() => route.fullPath, () => ui.closeAll());
     <div class="page-wrapper">
       <AppHeader :variant="headerVariant" />
       <slot ></slot>
-      <AppFooter />
+      <AppFooter :variant="headerVariant" />
     </div>
 
     <MobileNav />
-    <ChatPopup />
+    <WhatsAppButton />
     <InfoSidebar />
     <ScrollToTop />
   </div>

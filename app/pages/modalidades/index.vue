@@ -4,7 +4,7 @@ import { modalidades as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Modalidades" />
+    <PageHeader image="/assets/images/img_bank/img_35.webp" title="Modalidades" />
     <ModalidadesGrid />
     <CtaHighlights :items="highlights" />
   </div>

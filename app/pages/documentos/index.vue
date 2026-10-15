@@ -4,7 +4,7 @@ import { documentos as highlights } from "~/constants/highlights.js";
 
 <template>
   <div>
-    <PageHeader title="Documentos / Trámites" />
+    <PageHeader image="/assets/images/img_bank/img_47.webp" title="Documentos / Trámites" />
     <DocumentosList />
     <CtaHighlights :items="highlights" />
   </div>

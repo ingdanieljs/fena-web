@@ -16,7 +16,7 @@ const events = [
     day: "12",
     month: "Abr",
     live: true,
-    stream: "oKKJr7QIskI",
+    stream: "UmIYanq5gH8",
   },
   {
     slug: "selectivo-nacional-de-clavados",

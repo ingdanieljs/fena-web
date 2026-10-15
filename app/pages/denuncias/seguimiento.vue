@@ -4,7 +4,7 @@ const crumbs = [{ label: "Canal de Denuncias", to: "/denuncias" }];
 
 <template>
   <div>
-    <PageHeader title="Consultar estado" :crumbs="crumbs" />
+    <PageHeader image="/assets/images/img_bank/img_46.webp" image-position="center 40%" title="Consultar estado" :crumbs="crumbs" />
     <DenunciasTracking />
   </div>
 </template>
