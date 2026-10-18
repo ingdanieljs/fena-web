@@ -1,4 +1,4 @@
-# web-fena
+# fena-web
 
 Sitio de la Federación Ecuatoriana de Natación en Nuxt 4. Migrado desde `../fena-web` (HTML estático, plantilla Eduvers) y organizado como `capia-web`.
 

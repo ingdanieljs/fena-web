@@ -1,0 +1,2 @@
+# Netlify: los favicons viven en /favicon; navegadores y buscadores piden /favicon.ico.
+/favicon.ico  /favicon/favicon.ico  301

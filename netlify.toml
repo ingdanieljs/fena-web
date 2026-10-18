@@ -1,0 +1,7 @@
+# Deploy estático en Netlify: genera el sitio con Nuxt y publica .output/public.
+[build]
+  command = "pnpm generate"
+  publish = ".output/public"
+
+[build.environment]
+  NODE_VERSION = "22"

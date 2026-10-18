@@ -79,8 +79,6 @@ export default defineNuxtConfig({
     },
   },
   css: ["~/assets/main.css"],
-  // Los favicons viven en public/favicon; navegadores y buscadores igual piden /favicon.ico.
-  routeRules: {
-    "/favicon.ico": { redirect: { to: "/favicon/favicon.ico", statusCode: 301 } },
-  },
+  // /favicon.ico → /favicon/favicon.ico se redirige en Netlify (public/_redirects):
+  // como routeRule, el sitio estático la generaba como una carpeta con HTML.
 });
